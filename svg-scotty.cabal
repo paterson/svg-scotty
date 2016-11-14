@@ -15,8 +15,8 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib
-  build-depends:       base >= 4.7 && < 5
+  exposed-modules:     Shapes.Shape, Shapes.Render
+  build-depends:       base >= 4.7 && < 5, blaze-svg
   default-language:    Haskell2010
 
 executable svg-scotty-exe
@@ -33,6 +33,10 @@ test-suite svg-scotty-test
   main-is:             Spec.hs
   build-depends:       base
                      , svg-scotty
+                     , scotty
+                     , blaze-html
+                     , blaze-svg
+                     , text
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
