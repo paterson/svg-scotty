@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/Users/niall/Desktop/projects/College/Advanced Functional/projects/svg-scotty/.stack-work/install/x86_64-osx/lts-7.9/8.0.1/bin"
-libdir     = "/Users/niall/Desktop/projects/College/Advanced Functional/projects/svg-scotty/.stack-work/install/x86_64-osx/lts-7.9/8.0.1/lib/x86_64-osx-ghc-8.0.1/svg-scotty-0.1.0.0-DQsfCGvSvlK9laSdPuUlpb"
+libdir     = "/Users/niall/Desktop/projects/College/Advanced Functional/projects/svg-scotty/.stack-work/install/x86_64-osx/lts-7.9/8.0.1/lib/x86_64-osx-ghc-8.0.1/svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO"
 datadir    = "/Users/niall/Desktop/projects/College/Advanced Functional/projects/svg-scotty/.stack-work/install/x86_64-osx/lts-7.9/8.0.1/share/x86_64-osx-ghc-8.0.1/svg-scotty-0.1.0.0"
 libexecdir = "/Users/niall/Desktop/projects/College/Advanced Functional/projects/svg-scotty/.stack-work/install/x86_64-osx/lts-7.9/8.0.1/libexec"
 sysconfdir = "/Users/niall/Desktop/projects/College/Advanced Functional/projects/svg-scotty/.stack-work/install/x86_64-osx/lts-7.9/8.0.1/etc"

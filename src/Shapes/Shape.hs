@@ -1,10 +1,12 @@
 module Shapes.Shape(
-  Shape, Point, Vector, Transform, Drawing,
+  Shape (..), Point, Vector, Transform, Drawing, Stylesheet, Style (..), Color (..),
   point, getX, getY,
   empty, circle, square,
   identity, translate, rotate, scale, (<+>),
   inside)  where
 
+import Data.Map (Map)
+import qualified Data.Map as Map
 
 -- Utilities
 
@@ -34,20 +36,30 @@ getY (Vector x y) = y
 
 -- Styles
 
-type Stylesheet = [Style]
+data Color = Black
+           | Red
+           | Green
+           | Yellow
+           | Blue
+           | Magenta
+           | Cyan
+           | White
+             deriving (Show, Read)
 
+-- Add in attributes for Circle - radius etc
 data Style = Stroke Color
            | Fill Color
-           | Outline Int
-           | Height Int
-           | Width Int
-           | Position Point
-             deriving Show
+           | Outline Float
+           | X Float
+           | Y Float
+           | Width Float
+           | Height Float
+           | CenterX Float
+           | CenterY Float
+           | Radius Float
+             deriving (Show, Read)
 
-data Color = Red
-           | Green
-           | Blue
-             deriving Show 
+type Stylesheet = [Style]
 
 -- Shapes
 
@@ -99,8 +111,8 @@ type Drawing = [(Transform,Shape, Stylesheet)]
 inside :: Point -> Drawing -> Bool
 inside p d = or $ map (inside1 p) d
 
-inside1 :: Point -> (Transform, Shape) -> Bool
-inside1 p (t,s) = insides (transform t p) s
+inside1 :: Point -> (Transform, Shape, Stylesheet) -> Bool
+inside1 p (t,s,_) = insides (transform t p) s
 
 insides :: Point -> Shape -> Bool
 p `insides` Empty = False

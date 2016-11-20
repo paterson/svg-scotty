@@ -21,6 +21,34 @@
   (major1) == 0 && (major2) <  3 || \
   (major1) == 0 && (major2) == 3 && (minor) <= 6)
 
+/* package containers-0.5.7.1 */
+#define VERSION_containers "0.5.7.1"
+#define MIN_VERSION_containers(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  5 || \
+  (major1) == 0 && (major2) == 5 && (minor) <= 7)
+
+/* package blaze-html-0.8.1.2 */
+#define VERSION_blaze_html "0.8.1.2"
+#define MIN_VERSION_blaze_html(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  8 || \
+  (major1) == 0 && (major2) == 8 && (minor) <= 1)
+
+/* package scotty-0.11.0 */
+#define VERSION_scotty "0.11.0"
+#define MIN_VERSION_scotty(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  11 || \
+  (major1) == 0 && (major2) == 11 && (minor) <= 0)
+
+/* package text-1.2.2.1 */
+#define VERSION_text "1.2.2.1"
+#define MIN_VERSION_text(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 2)
+
 /* tool alex-3.1.4 */
 #define TOOL_VERSION_alex "3.1.4"
 #define MIN_TOOL_VERSION_alex(major1,major2,minor) (\
@@ -91,7 +119,7 @@
   (major1) == 0 && (major2) <  29 || \
   (major1) == 0 && (major2) == 29 && (minor) <= 1)
 
-#define CURRENT_COMPONENT_ID "svg-scotty-0.1.0.0-DQsfCGvSvlK9laSdPuUlpb"
+#define CURRENT_COMPONENT_ID "svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO"
 
-#define CURRENT_PACKAGE_KEY "svg-scotty-0.1.0.0-DQsfCGvSvlK9laSdPuUlpb"
+#define CURRENT_PACKAGE_KEY "svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO"
 

@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-14 12:31:07.357578 UTC
+2016-11-20 15:44:48.960424 UTC
 
-interface svg-scotty-0.1.0.0-DQsfCGvSvlK9laSdPuUlpb:Shapes.Shape 8001
-  interface hash: 243943d81d7451d4e8f6f17efeb0d844
-  ABI hash: d2625b3dcbbfa795067f137b0d16840d
-  export-list hash: 6177378e6c3c3befb7518bd9c8e2e829
+interface svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO:Shapes.Shape 8001
+  interface hash: a214ab2fa381947396a328bae0c28aa1
+  ABI hash: 99df9c9ca644cccfb695f77071125fb3
+  export-list hash: 5fb130bfff1c67620da3b754ba50cdf2
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 26a4e1554b87f05a2d579f4a033cc004
   sig of: Nothing
@@ -24,20 +24,30 @@ exports:
   Shapes.Shape.scale
   Shapes.Shape.square
   Shapes.Shape.translate
+  Shapes.Shape.Color{Shapes.Shape.Black Shapes.Shape.Blue Shapes.Shape.Cyan Shapes.Shape.Green Shapes.Shape.Magenta Shapes.Shape.Red Shapes.Shape.White Shapes.Shape.Yellow}
   Shapes.Shape.Drawing
   Shapes.Shape.Point
-  Shapes.Shape.Shape
+  Shapes.Shape.Shape{Shapes.Shape.Circle Shapes.Shape.Empty Shapes.Shape.Square}
+  Shapes.Shape.Style{Shapes.Shape.CenterX Shapes.Shape.CenterY Shapes.Shape.Fill Shapes.Shape.Height Shapes.Shape.Outline Shapes.Shape.Radius Shapes.Shape.Stroke Shapes.Shape.Width Shapes.Shape.X Shapes.Shape.Y}
+  Shapes.Shape.Stylesheet
   Shapes.Shape.Transform
   Shapes.Shape.Vector
 module dependencies:
-package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
                       integer-gmp-1.0.0.1
 orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
 family instance modules: base-4.9.0.0:Control.Applicative
-                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
-                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
-                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
-                         base-4.9.0.0:GHC.TypeLits
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
 import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
 import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
 import  -/  base-4.9.0.0:GHC.Float 469226b1bc53433e95d0167dec5d0312
@@ -48,8 +58,451 @@ import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
 import  -/  base-4.9.0.0:Text.ParserCombinators.ReadPrec 9512e2f4b227f507f87a150887202aed
 import  -/  base-4.9.0.0:Text.Read.Lex fe3dd7b823826bf6870140c5363f9596
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 8f3eaf1368a7ea27857993e3febae6a3
 import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
-bba473d3a4ede384625f663b9a37ee93
+45d11fdb7084a43448187cf33934a230
+  $fReadColor :: GHC.Read.Read Shapes.Shape.Color
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Shapes.Shape.Color
+                  Shapes.Shape.$fReadColor_$creadsPrec
+                  Shapes.Shape.$fReadColor_$creadList
+                  Shapes.Shape.$fReadColor_$creadPrec
+                  Shapes.Shape.$fReadColor_$creadListPrec -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Shapes.Shape.Color] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,A><L,C(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Shapes.Shape.Color]
+                            -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.$wlist
+                   @ Shapes.Shape.Color
+                   Shapes.Shape.$fReadColor2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Shapes.Shape.Color>_R))
+                   @ b
+                   eta1) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor10 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+                   Shapes.Shape.$fReadColor15
+                   Shapes.Shape.$fReadColor11) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor11 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+                   Shapes.Shape.$fReadColor12
+                   (GHC.Types.[]
+                      @ (GHC.Base.String,
+                         Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color))) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor12 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+  {- Strictness: m,
+     Unfolding: ((Shapes.Shape.$fReadColor14,
+                  Shapes.Shape.$fReadColor13
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape.Color>_R))))) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor13 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Shape.White) -}
+7945575dc787fccadeca5fb121f15e12
+  $fReadColor14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "White"#) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor15 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+  {- Strictness: m,
+     Unfolding: ((Shapes.Shape.$fReadColor17,
+                  Shapes.Shape.$fReadColor16
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape.Color>_R))))) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor16 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Shape.Cyan) -}
+f5c31f5867e774da6955f6e058b77f17
+  $fReadColor17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Cyan"#) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor18 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+  {- Strictness: m,
+     Unfolding: ((Shapes.Shape.$fReadColor20,
+                  Shapes.Shape.$fReadColor19
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape.Color>_R))))) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor19 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Shape.Magenta) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Shapes.Shape.Color
+  {- Arity: 1,
+     Unfolding: (GHC.Read.$fReadDouble10
+                   @ Shapes.Shape.Color
+                   Shapes.Shape.$fReadColor3
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                       <Shapes.Shape.Color>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                  <Shapes.Shape.Color>_R)))) -}
+932a347cdd2c37f20d5518bc8dce60f4
+  $fReadColor20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Magenta"#) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor21 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+  {- Strictness: m,
+     Unfolding: ((Shapes.Shape.$fReadColor23,
+                  Shapes.Shape.$fReadColor22
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape.Color>_R))))) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor22 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Shape.Blue) -}
+32f0738b6e2728674bef150cc72f68d4
+  $fReadColor23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Blue"#) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor24 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+  {- Strictness: m,
+     Unfolding: ((Shapes.Shape.$fReadColor26,
+                  Shapes.Shape.$fReadColor25
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape.Color>_R))))) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor25 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Shape.Yellow) -}
+107707e25b59d2c5166700ba49cd2f91
+  $fReadColor26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Yellow"#) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor27 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+  {- Strictness: m,
+     Unfolding: ((Shapes.Shape.$fReadColor29,
+                  Shapes.Shape.$fReadColor28
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape.Color>_R))))) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor28 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Shape.Green) -}
+38226798b0692179f43063d373529ca5
+  $fReadColor29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Green"#) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.choose2
+                   @ Shapes.Shape.Color
+                   Shapes.Shape.$fReadColor4
+                   eta
+                   @ b
+                   eta1) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor30 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+  {- Strictness: m,
+     Unfolding: ((Shapes.Shape.$fReadColor32,
+                  Shapes.Shape.$fReadColor31
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape.Color>_R))))) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor31 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Shape.Red) -}
+d375173a9599b2fe7e5451392b01a79c
+  $fReadColor32 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Red"#) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor33 ::
+    ([GHC.Types.Char],
+     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+  {- Strictness: m,
+     Unfolding: ((Shapes.Shape.$fReadColor35,
+                  Shapes.Shape.$fReadColor34
+                    `cast`
+                  (Trans
+                       (<Text.ParserCombinators.ReadPrec.Prec>_R
+                        ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                      <Shapes.Shape.Color>_R))
+                       (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                 <Shapes.Shape.Color>_R))))) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor34 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><C(S),1*C1(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta :: Shapes.Shape.Color -> Text.ParserCombinators.ReadP.P b) ->
+                 eta Shapes.Shape.Black) -}
+eb2fc45d951af49e95cc76df3b24e666
+  $fReadColor35 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Black"#) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor36 ::
+    Text.ParserCombinators.ReadP.P [Shapes.Shape.Color]
+  {- Unfolding: (GHC.Read.$wlist
+                   @ Shapes.Shape.Color
+                   Shapes.Shape.$fReadColor2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Shapes.Shape.Color>_R))
+                   @ [Shapes.Shape.Color]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Shapes.Shape.Color])) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor4 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+                   Shapes.Shape.$fReadColor33
+                   Shapes.Shape.$fReadColor5) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor5 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+                   Shapes.Shape.$fReadColor30
+                   Shapes.Shape.$fReadColor6) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor6 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+                   Shapes.Shape.$fReadColor27
+                   Shapes.Shape.$fReadColor7) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor7 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+                   Shapes.Shape.$fReadColor24
+                   Shapes.Shape.$fReadColor8) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor8 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+                   Shapes.Shape.$fReadColor21
+                   Shapes.Shape.$fReadColor9) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor9 ::
+    [(GHC.Base.String,
+      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String,
+                      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color)
+                   Shapes.Shape.$fReadColor18
+                   Shapes.Shape.$fReadColor10) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Shapes.Shape.Color]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Shapes.Shape.Color]
+                   Shapes.Shape.$fReadColor36) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Shapes.Shape.Color]
+  {- Arity: 2, Strictness: <L,A><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Shapes.Shape.$fReadColor1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Shapes.Shape.Color]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Shapes.Shape.Color]>_R))) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Color
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Shapes.Shape.$fReadColor2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Shapes.Shape.Color>_R)) -}
+45d11fdb7084a43448187cf33934a230
+  $fReadColor_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS Shapes.Shape.Color
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Shapes.Shape.Color
+                   ((GHC.Read.$fReadDouble10
+                       @ Shapes.Shape.Color
+                       Shapes.Shape.$fReadColor3
+                         `cast`
+                       (Trans
+                            (<Text.ParserCombinators.ReadPrec.Prec>_R
+                             ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                           <Shapes.Shape.Color>_R))
+                            (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                      <Shapes.Shape.Color>_R)))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Shapes.Shape.Color>_R)
+                      @ Shapes.Shape.Color
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Shapes.Shape.Color))) -}
+6bc629e8b39f1f5d02c0da8d4b414405
   $fReadMatrix :: GHC.Read.Read Shapes.Shape.Matrix
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -59,7 +512,7 @@ bba473d3a4ede384625f663b9a37ee93
                   Shapes.Shape.$fReadMatrix_$creadList
                   Shapes.Shape.$fReadMatrix_$creadPrec
                   Shapes.Shape.$fReadMatrix_$creadListPrec -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fReadMatrix1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -79,7 +532,7 @@ bba473d3a4ede384625f663b9a37ee93
                              <Shapes.Shape.Matrix>_R))
                    @ b
                    eta1) -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fReadMatrix2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Shapes.Shape.Matrix
@@ -94,7 +547,7 @@ bba473d3a4ede384625f663b9a37ee93
                                        <Shapes.Shape.Matrix>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Shapes.Shape.Matrix>_R)))) -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fReadMatrix3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -107,13 +560,13 @@ bba473d3a4ede384625f663b9a37ee93
                    (w1 :: Shapes.Shape.Matrix -> Text.ParserCombinators.ReadP.P b) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Shapes.Shape.$w$creadPrec ww1 @ b w1 }) -}
-b9a345b7a7f4e9754202597f9c5d204b
+c8da212315b79a86ed48bd6ccb35709f
   $fReadMatrix4 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Matrix"#) -}
-319c37f33af7d1a6bfddde4734d19d23
+f15d245b0b0b6a95500491df3a71cfa3
   $fReadMatrix5 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 11#) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fReadMatrix6 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -126,10 +579,10 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                    (w1 :: Shapes.Shape.Vector -> Text.ParserCombinators.ReadP.P b) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Shapes.Shape.$w$creadPrec1 ww1 @ b w1 }) -}
-c2e035000d7310640f3e4fee584c4cfb
+38481eadbf8a7d25876f299a8d64f842
   $fReadMatrix7 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Vector"#) -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fReadMatrix8 ::
     Text.ParserCombinators.ReadP.P [Shapes.Shape.Matrix]
   {- Unfolding: (GHC.Read.$wlist
@@ -141,14 +594,14 @@ bba473d3a4ede384625f663b9a37ee93
                    @ [Shapes.Shape.Matrix]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Shapes.Shape.Matrix])) -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fReadMatrix_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Shapes.Shape.Matrix]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Shapes.Shape.Matrix]
                    Shapes.Shape.$fReadMatrix8) -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fReadMatrix_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Shapes.Shape.Matrix]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -161,7 +614,7 @@ bba473d3a4ede384625f663b9a37ee93
                                     <[Shapes.Shape.Matrix]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Shapes.Shape.Matrix]>_R))) -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fReadMatrix_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Matrix
   {- Arity: 1,
@@ -170,7 +623,7 @@ bba473d3a4ede384625f663b9a37ee93
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Shapes.Shape.Matrix>_R)) -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fReadMatrix_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS Shapes.Shape.Matrix
@@ -195,7 +648,7 @@ bba473d3a4ede384625f663b9a37ee93
                       @ Shapes.Shape.Matrix
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Shapes.Shape.Matrix))) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape :: GHC.Read.Read Shapes.Shape.Shape
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -205,7 +658,7 @@ bba473d3a4ede384625f663b9a37ee93
                   Shapes.Shape.$fReadShape_$creadList
                   Shapes.Shape.$fReadShape_$creadPrec
                   Shapes.Shape.$fReadShape_$creadListPrec -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -225,7 +678,7 @@ bba473d3a4ede384625f663b9a37ee93
                              <Shapes.Shape.Shape>_R))
                    @ b
                    eta1) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape10 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Shape)
@@ -239,7 +692,7 @@ bba473d3a4ede384625f663b9a37ee93
                                       <Shapes.Shape.Shape>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                  <Shapes.Shape.Shape>_R))))) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape11 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -251,10 +704,10 @@ bba473d3a4ede384625f663b9a37ee93
                    @ b
                    (eta :: Shapes.Shape.Shape -> Text.ParserCombinators.ReadP.P b) ->
                  eta Shapes.Shape.Circle) -}
-0f8114a5f298b7d5b1784f5fb84ee01d
+3263f940fe7f43e2a27a16125422a9d0
   $fReadShape12 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Circle"#) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape13 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Shape)
@@ -268,7 +721,7 @@ bba473d3a4ede384625f663b9a37ee93
                                       <Shapes.Shape.Shape>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                  <Shapes.Shape.Shape>_R))))) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape14 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -280,10 +733,10 @@ bba473d3a4ede384625f663b9a37ee93
                    @ b
                    (eta :: Shapes.Shape.Shape -> Text.ParserCombinators.ReadP.P b) ->
                  eta Shapes.Shape.Empty) -}
-7c33c723e3921bd04c956f112a19095b
+15a81caddb2568e84c9983ada9241cf5
   $fReadShape15 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Empty"#) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape16 ::
     Text.ParserCombinators.ReadP.P [Shapes.Shape.Shape]
   {- Unfolding: (GHC.Read.$wlist
@@ -295,7 +748,7 @@ bba473d3a4ede384625f663b9a37ee93
                    @ [Shapes.Shape.Shape]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Shapes.Shape.Shape])) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Shapes.Shape.Shape
@@ -310,7 +763,7 @@ bba473d3a4ede384625f663b9a37ee93
                                        <Shapes.Shape.Shape>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Shapes.Shape.Shape>_R)))) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -327,7 +780,7 @@ bba473d3a4ede384625f663b9a37ee93
                    eta
                    @ b
                    eta1) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape4 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Shape)]
@@ -337,7 +790,7 @@ bba473d3a4ede384625f663b9a37ee93
                       Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Shape)
                    Shapes.Shape.$fReadShape13
                    Shapes.Shape.$fReadShape5) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape5 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Shape)]
@@ -347,7 +800,7 @@ bba473d3a4ede384625f663b9a37ee93
                       Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Shape)
                    Shapes.Shape.$fReadShape10
                    Shapes.Shape.$fReadShape6) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape6 ::
     [(GHC.Base.String,
       Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Shape)]
@@ -359,7 +812,7 @@ bba473d3a4ede384625f663b9a37ee93
                    (GHC.Types.[]
                       @ (GHC.Base.String,
                          Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Shape))) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape7 ::
     ([GHC.Types.Char],
      Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Shape)
@@ -373,7 +826,7 @@ bba473d3a4ede384625f663b9a37ee93
                                       <Shapes.Shape.Shape>_R))
                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                  <Shapes.Shape.Shape>_R))))) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape8 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -385,17 +838,17 @@ bba473d3a4ede384625f663b9a37ee93
                    @ b
                    (eta :: Shapes.Shape.Shape -> Text.ParserCombinators.ReadP.P b) ->
                  eta Shapes.Shape.Square) -}
-5446ebf13013586e7483e39daa5d37ab
+40254c7a6aa562bb28a43b43f0ee59ca
   $fReadShape9 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Square"#) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Shapes.Shape.Shape]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Shapes.Shape.Shape]
                    Shapes.Shape.$fReadShape16) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Shapes.Shape.Shape]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -408,7 +861,7 @@ bba473d3a4ede384625f663b9a37ee93
                                     <[Shapes.Shape.Shape]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Shapes.Shape.Shape]>_R))) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Shape
   {- Arity: 1,
@@ -417,7 +870,7 @@ bba473d3a4ede384625f663b9a37ee93
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Shapes.Shape.Shape>_R)) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fReadShape_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS Shapes.Shape.Shape
@@ -442,7 +895,130 @@ bba473d3a4ede384625f663b9a37ee93
                       @ Shapes.Shape.Shape
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Shapes.Shape.Shape))) -}
-a89dcae751d8b2de785db28570a69ceb
+14667b7358bfbe67333ede1b0609373e
+  $fReadStyle :: GHC.Read.Read Shapes.Shape.Style
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Shapes.Shape.Style
+                  Shapes.Shape.$fReadStyle_$creadsPrec
+                  Shapes.Shape.$fReadStyle_$creadList
+                  Shapes.Shape.$fReadStyle_$creadPrec
+                  Shapes.Shape.$fReadStyle_$creadListPrec -}
+14667b7358bfbe67333ede1b0609373e
+  $fReadStyle1 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       ([Shapes.Shape.Style] -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <L,A><L,C(U)>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (eta :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (eta1 :: [Shapes.Shape.Style]
+                            -> Text.ParserCombinators.ReadP.P b) ->
+                 GHC.Read.$wlist
+                   @ Shapes.Shape.Style
+                   Shapes.Shape.$fReadStyle2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Shapes.Shape.Style>_R))
+                   @ b
+                   eta1) -}
+14667b7358bfbe67333ede1b0609373e
+  $fReadStyle2 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> Text.ParserCombinators.ReadP.ReadP Shapes.Shape.Style
+  {- Arity: 1,
+     Unfolding: (GHC.Read.$fReadDouble10
+                   @ Shapes.Shape.Style
+                   Shapes.Shape.$fReadStyle3
+                     `cast`
+                   (Trans
+                        (<Text.ParserCombinators.ReadPrec.Prec>_R
+                         ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                       <Shapes.Shape.Style>_R))
+                        (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                  <Shapes.Shape.Style>_R)))) -}
+14667b7358bfbe67333ede1b0609373e
+  $fReadStyle3 ::
+    Text.ParserCombinators.ReadPrec.Prec
+    -> forall b.
+       (Shapes.Shape.Style -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <S(S),1*U(U)><L,C(U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Text.ParserCombinators.ReadPrec.Prec)
+                   @ b
+                   (w1 :: Shapes.Shape.Style -> Text.ParserCombinators.ReadP.P b) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Shapes.Shape.$w$creadPrec2 ww1 @ b w1 }) -}
+14667b7358bfbe67333ede1b0609373e
+  $fReadStyle4 :: Text.ParserCombinators.ReadP.P [Shapes.Shape.Style]
+  {- Unfolding: (GHC.Read.$wlist
+                   @ Shapes.Shape.Style
+                   Shapes.Shape.$fReadStyle2
+                     `cast`
+                   (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                             <Shapes.Shape.Style>_R))
+                   @ [Shapes.Shape.Style]
+                   (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                      @ [Shapes.Shape.Style])) -}
+14667b7358bfbe67333ede1b0609373e
+  $fReadStyle_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [Shapes.Shape.Style]
+  {- Arity: 1,
+     Unfolding: (Text.ParserCombinators.ReadP.run
+                   @ [Shapes.Shape.Style]
+                   Shapes.Shape.$fReadStyle4) -}
+14667b7358bfbe67333ede1b0609373e
+  $fReadStyle_$creadListPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec [Shapes.Shape.Style]
+  {- Arity: 2, Strictness: <L,A><L,C(U)>,
+     Unfolding: InlineRule (0, True, True)
+                Shapes.Shape.$fReadStyle1
+                  `cast`
+                (Trans
+                     (<Text.ParserCombinators.ReadPrec.Prec>_R
+                      ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                    <[Shapes.Shape.Style]>_R))
+                     (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                               <[Shapes.Shape.Style]>_R))) -}
+14667b7358bfbe67333ede1b0609373e
+  $fReadStyle_$creadPrec ::
+    Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Style
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Shapes.Shape.$fReadStyle2
+                  `cast`
+                (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <Shapes.Shape.Style>_R)) -}
+14667b7358bfbe67333ede1b0609373e
+  $fReadStyle_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS Shapes.Shape.Style
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ Shapes.Shape.Style
+                   ((GHC.Read.$fReadDouble10
+                       @ Shapes.Shape.Style
+                       Shapes.Shape.$fReadStyle3
+                         `cast`
+                       (Trans
+                            (<Text.ParserCombinators.ReadPrec.Prec>_R
+                             ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                           <Shapes.Shape.Style>_R))
+                            (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                      <Shapes.Shape.Style>_R)))
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <Shapes.Shape.Style>_R)
+                      @ Shapes.Shape.Style
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ Shapes.Shape.Style))) -}
+5eab733712a31d57804fc4efd820cb2f
   $fReadTransform :: GHC.Read.Read Shapes.Shape.Transform
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -452,7 +1028,7 @@ a89dcae751d8b2de785db28570a69ceb
                   Shapes.Shape.$fReadTransform_$creadList
                   Shapes.Shape.$fReadTransform_$creadPrec
                   Shapes.Shape.$fReadTransform_$creadListPrec -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fReadTransform1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -472,7 +1048,7 @@ a89dcae751d8b2de785db28570a69ceb
                              <Shapes.Shape.Transform>_R))
                    @ b
                    eta1) -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fReadTransform2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Shapes.Shape.Transform
@@ -487,14 +1063,14 @@ a89dcae751d8b2de785db28570a69ceb
                                        <Shapes.Shape.Transform>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Shapes.Shape.Transform>_R)))) -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fReadTransform3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
        (Shapes.Shape.Transform -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <L,1*U(U)><L,C(U)> -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fReadTransform4 ::
     Text.ParserCombinators.ReadP.P [Shapes.Shape.Transform]
   {- Unfolding: (GHC.Read.$wlist
@@ -506,14 +1082,14 @@ a89dcae751d8b2de785db28570a69ceb
                    @ [Shapes.Shape.Transform]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Shapes.Shape.Transform])) -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fReadTransform_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Shapes.Shape.Transform]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Shapes.Shape.Transform]
                    Shapes.Shape.$fReadTransform4) -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fReadTransform_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Shapes.Shape.Transform]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -526,7 +1102,7 @@ a89dcae751d8b2de785db28570a69ceb
                                     <[Shapes.Shape.Transform]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Shapes.Shape.Transform]>_R))) -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fReadTransform_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Transform
   {- Arity: 1,
@@ -535,7 +1111,7 @@ a89dcae751d8b2de785db28570a69ceb
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Shapes.Shape.Transform>_R)) -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fReadTransform_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS Shapes.Shape.Transform
@@ -561,7 +1137,7 @@ a89dcae751d8b2de785db28570a69ceb
                       @ Shapes.Shape.Transform
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Shapes.Shape.Transform))) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fReadVector :: GHC.Read.Read Shapes.Shape.Vector
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -571,7 +1147,7 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                   Shapes.Shape.$fReadVector_$creadList
                   Shapes.Shape.$fReadVector_$creadPrec
                   Shapes.Shape.$fReadVector_$creadListPrec -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fReadVector1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -591,7 +1167,7 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                              <Shapes.Shape.Vector>_R))
                    @ b
                    eta1) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fReadVector2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Shapes.Shape.Vector
@@ -606,7 +1182,7 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                                        <Shapes.Shape.Vector>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Shapes.Shape.Vector>_R)))) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fReadVector3 ::
     Text.ParserCombinators.ReadP.P [Shapes.Shape.Vector]
   {- Unfolding: (GHC.Read.$wlist
@@ -618,14 +1194,14 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                    @ [Shapes.Shape.Vector]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Shapes.Shape.Vector])) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fReadVector_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Shapes.Shape.Vector]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Shapes.Shape.Vector]
                    Shapes.Shape.$fReadVector3) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fReadVector_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Shapes.Shape.Vector]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -638,7 +1214,7 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                                     <[Shapes.Shape.Vector]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Shapes.Shape.Vector]>_R))) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fReadVector_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Vector
   {- Arity: 1,
@@ -647,7 +1223,7 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Shapes.Shape.Vector>_R)) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fReadVector_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS Shapes.Shape.Vector
@@ -672,7 +1248,40 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                       @ Shapes.Shape.Vector
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Shapes.Shape.Vector))) -}
-bba473d3a4ede384625f663b9a37ee93
+45d11fdb7084a43448187cf33934a230
+  $fShowColor :: GHC.Show.Show Shapes.Shape.Color
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Shapes.Shape.Color
+                  Shapes.Shape.$fShowColor_$cshowsPrec
+                  Shapes.Shape.$fShowColor_$cshow
+                  Shapes.Shape.$fShowColor_$cshowList -}
+45d11fdb7084a43448187cf33934a230
+  $fShowColor_$cshow :: Shapes.Shape.Color -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Shapes.Shape.Color) ->
+                 Shapes.Shape.$fShowColor_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+45d11fdb7084a43448187cf33934a230
+  $fShowColor_$cshowList :: [Shapes.Shape.Color] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Shapes.Shape.Color
+                   Shapes.Shape.$w$cshowsPrec) -}
+45d11fdb7084a43448187cf33934a230
+  $fShowColor_$cshowsPrec ::
+    GHC.Types.Int -> Shapes.Shape.Color -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Shapes.Shape.Color)
+                   (w2 :: GHC.Base.String) ->
+                 Shapes.Shape.$w$cshowsPrec w1 w2) -}
+6bc629e8b39f1f5d02c0da8d4b414405
   $fShowMatrix :: GHC.Show.Show Shapes.Shape.Matrix
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -681,19 +1290,19 @@ bba473d3a4ede384625f663b9a37ee93
                   Shapes.Shape.$fShowMatrix_$cshowsPrec
                   Shapes.Shape.$fShowMatrix_$cshow
                   Shapes.Shape.$fShowMatrix_$cshowList -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fShowMatrix1 :: Shapes.Shape.Matrix -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (\ (w :: Shapes.Shape.Matrix) ->
                  case w of ww { Shapes.Shape.Matrix ww1 ww2 ->
-                 Shapes.Shape.$w$cshowsPrec 0# ww1 ww2 }) -}
-a12498fa842ef70ef4ac5eb9187fbf6d
+                 Shapes.Shape.$w$cshowsPrec1 0# ww1 ww2 }) -}
+895065700a51190513d3d5b9f1cc8a4c
   $fShowMatrix2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Matrix "#) -}
-619a64ecc75fc1b481b1d4f392571364
+02b225e4c0cd60517aa43f3078ddfbd0
   $fShowMatrix3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Vector "#) -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fShowMatrix_$cshow :: Shapes.Shape.Matrix -> GHC.Base.String
   {- Arity: 1,
      Strictness: <S,1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)))>,
@@ -703,13 +1312,13 @@ bba473d3a4ede384625f663b9a37ee93
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fShowMatrix_$cshowList :: [Shapes.Shape.Matrix] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Shapes.Shape.Matrix
                    Shapes.Shape.$fShowMatrix1) -}
-bba473d3a4ede384625f663b9a37ee93
+6bc629e8b39f1f5d02c0da8d4b414405
   $fShowMatrix_$cshowsPrec ::
     GHC.Types.Int -> Shapes.Shape.Matrix -> GHC.Show.ShowS
   {- Arity: 2,
@@ -719,8 +1328,8 @@ bba473d3a4ede384625f663b9a37ee93
                 (\ (w :: GHC.Types.Int) (w1 :: Shapes.Shape.Matrix) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  case w1 of ww2 { Shapes.Shape.Matrix ww3 ww4 ->
-                 Shapes.Shape.$w$cshowsPrec ww1 ww3 ww4 } }) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+                 Shapes.Shape.$w$cshowsPrec1 ww1 ww3 ww4 } }) -}
+51563dfb73c79536043d6caa5f672d8f
   $fShowShape :: GHC.Show.Show Shapes.Shape.Shape
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -729,7 +1338,7 @@ bba473d3a4ede384625f663b9a37ee93
                   Shapes.Shape.$fShowShape_$cshowsPrec
                   Shapes.Shape.$fShowShape_$cshow
                   Shapes.Shape.$fShowShape_$cshowList -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fShowShape_$cshow :: Shapes.Shape.Shape -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -738,13 +1347,13 @@ bba473d3a4ede384625f663b9a37ee93
                    Shapes.Shape.Empty -> Shapes.Shape.$fReadShape15
                    Shapes.Shape.Circle -> Shapes.Shape.$fReadShape12
                    Shapes.Shape.Square -> Shapes.Shape.$fReadShape9 }) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   $fShowShape_$cshowList :: [Shapes.Shape.Shape] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Shapes.Shape.Shape
-                   Shapes.Shape.$w$cshowsPrec2) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
+                   Shapes.Shape.$w$cshowsPrec3) -}
+51563dfb73c79536043d6caa5f672d8f
   $fShowShape_$cshowsPrec ::
     GHC.Types.Int -> Shapes.Shape.Shape -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
@@ -752,8 +1361,45 @@ bba473d3a4ede384625f663b9a37ee93
                 (\ (w :: GHC.Types.Int)
                    (w1 :: Shapes.Shape.Shape)
                    (w2 :: GHC.Base.String) ->
-                 Shapes.Shape.$w$cshowsPrec2 w1 w2) -}
-a89dcae751d8b2de785db28570a69ceb
+                 Shapes.Shape.$w$cshowsPrec3 w1 w2) -}
+14667b7358bfbe67333ede1b0609373e
+  $fShowStyle :: GHC.Show.Show Shapes.Shape.Style
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Shapes.Shape.Style
+                  Shapes.Shape.$fShowStyle_$cshowsPrec
+                  Shapes.Shape.$fShowStyle_$cshow
+                  Shapes.Shape.$fShowStyle_$cshowList -}
+14667b7358bfbe67333ede1b0609373e
+  $fShowStyle1 :: Shapes.Shape.Style -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Shapes.Shape.Style) ->
+                 Shapes.Shape.$w$cshowsPrec4 0# w) -}
+14667b7358bfbe67333ede1b0609373e
+  $fShowStyle_$cshow :: Shapes.Shape.Style -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Shapes.Shape.Style) ->
+                 Shapes.Shape.$fShowStyle_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+14667b7358bfbe67333ede1b0609373e
+  $fShowStyle_$cshowList :: [Shapes.Shape.Style] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Shapes.Shape.Style
+                   Shapes.Shape.$fShowStyle1) -}
+14667b7358bfbe67333ede1b0609373e
+  $fShowStyle_$cshowsPrec ::
+    GHC.Types.Int -> Shapes.Shape.Style -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Shapes.Shape.Style) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Shapes.Shape.$w$cshowsPrec4 ww1 w1 }) -}
+5eab733712a31d57804fc4efd820cb2f
   $fShowTransform :: GHC.Show.Show Shapes.Shape.Transform
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -762,15 +1408,15 @@ a89dcae751d8b2de785db28570a69ceb
                   Shapes.Shape.$fShowTransform_$cshowsPrec
                   Shapes.Shape.$fShowTransform_$cshow
                   Shapes.Shape.$fShowTransform_$cshowList -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fShowTransform1 :: Shapes.Shape.Transform -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (Shapes.Shape.$fShowTransform_$cshowsPrec
                    Shapes.Shape.$fShowTransform2) -}
-93355fcb488dea77eb822e444322395c
+48e736deea2250a913d3fc33900e1f04
   $fShowTransform2 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fShowTransform_$cshow :: Shapes.Shape.Transform -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -779,18 +1425,18 @@ a89dcae751d8b2de785db28570a69ceb
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fShowTransform_$cshowList ::
     [Shapes.Shape.Transform] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Shapes.Shape.Transform
                    Shapes.Shape.$fShowTransform1) -}
-a89dcae751d8b2de785db28570a69ceb
+5eab733712a31d57804fc4efd820cb2f
   $fShowTransform_$cshowsPrec ::
     GHC.Types.Int -> Shapes.Shape.Transform -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <L,1*U(U)><S,1*U> -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fShowVector :: GHC.Show.Show Shapes.Shape.Vector
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -799,13 +1445,13 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                   Shapes.Shape.$fShowVector_$cshowsPrec
                   Shapes.Shape.$fShowVector_$cshow
                   Shapes.Shape.$fShowVector_$cshowList -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fShowVector1 :: Shapes.Shape.Vector -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (\ (w :: Shapes.Shape.Vector) ->
                  case w of ww { Shapes.Shape.Vector ww1 ww2 ->
-                 Shapes.Shape.$w$cshowsPrec1 0# ww1 ww2 }) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+                 Shapes.Shape.$w$cshowsPrec2 0# ww1 ww2 }) -}
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fShowVector_$cshow :: Shapes.Shape.Vector -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U(1*U(U),1*U(U))>,
      Unfolding: InlineRule (1, True, False)
@@ -814,13 +1460,13 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fShowVector_$cshowList :: [Shapes.Shape.Vector] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Shapes.Shape.Vector
                    Shapes.Shape.$fShowVector1) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $fShowVector_$cshowsPrec ::
     GHC.Types.Int -> Shapes.Shape.Vector -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U(1*U(U),1*U(U))>,
@@ -829,191 +1475,431 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                 (\ (w :: GHC.Types.Int) (w1 :: Shapes.Shape.Vector) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  case w1 of ww2 { Shapes.Shape.Vector ww3 ww4 ->
-                 Shapes.Shape.$w$cshowsPrec1 ww1 ww3 ww4 } }) -}
-22accefb26f063901e594ac36b4a5e53
+                 Shapes.Shape.$w$cshowsPrec2 ww1 ww3 ww4 } }) -}
+32a106303345651e0e7ff402f83634fe
+  $tc'Black :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1236751030299845441##
+                   4315705890813702368##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Black1) -}
+1c40e29ecb2d1002e75502740890f8b6
+  $tc'Black1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Black"#) -}
+9ec4f1b807d722b30a36430ab3081894
+  $tc'Blue :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7806544706895248362##
+                   10918388863524631342##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Blue1) -}
+41c4a2ea6483929fd24e7d4be7371125
+  $tc'Blue1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Blue"#) -}
+7be0ae4720ebc474f1617fc3d79e85d5
+  $tc'CenterX :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1546132961102780568##
+                   5379170987403777972##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'CenterX1) -}
+fdb27b1b39eea3752c91637514587317
+  $tc'CenterX1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'CenterX"#) -}
+4358392a21e5782829a9674e86274797
+  $tc'CenterY :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9946985180332379307##
+                   3159035107639068742##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'CenterY1) -}
+98a89ea0ac83a5678c628d59f0747bfa
+  $tc'CenterY1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'CenterY"#) -}
+fc985ede5bbe7f5d50acc30dd77f6cf0
   $tc'Circle :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   9870022010348364996##
-                   14231341967263618946##
+                   12040248143959608359##
+                   2567762282989321340##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tc'Circle1) -}
-6fc1fed755c431dff536528e6859c7c3
+088204f1bd87fea8446e2caed20769a8
   $tc'Circle1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Circle"#) -}
-1053b067c4e29fabf810e39a6e76a7a7
+25d10d1e9ae82f84cf8fab939bd6ca88
   $tc'Compose :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   14436875479519184883##
-                   5361653876752904443##
+                   11508098685907384273##
+                   11319730562484409614##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tc'Compose1) -}
-002cdb51341a28b31494af29ee833d25
+0a4c772018741f914b62a72d3aa74fff
   $tc'Compose1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Compose"#) -}
-2eae419bf88c9550c47db4c9666c1309
+d7258f337118458671a92b0bb236a9b3
+  $tc'Cyan :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   18419974208726641728##
+                   1148999523420884595##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Cyan1) -}
+416f6bee797fac3bc649a51dc7fef5e8
+  $tc'Cyan1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Cyan"#) -}
+4ae67489d09c91369220ed922b77eebb
   $tc'Empty :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   16051240006813497383##
-                   5103978345308539739##
+                   9380487960172588917##
+                   13391950723706069246##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tc'Empty1) -}
-763811cd041ee18d867138632544172d
+378fd162dcd50e163f328f63ed2ac1f9
   $tc'Empty1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Empty"#) -}
-d978ad855c0df7c29b62db4ea5935327
+edd36c20546c7493e2f1cd8f51400046
+  $tc'Fill :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14990359316998025932##
+                   8019920110699705168##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Fill1) -}
+e117b1905fec56ddfaf23b06e3672e8d
+  $tc'Fill1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Fill"#) -}
+2e636d36150a71ecb2ab4fe672bb2e04
+  $tc'Green :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4020766793999370565##
+                   1462976194599399829##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Green1) -}
+42d2346e67cf496e3e2a5436a15aed11
+  $tc'Green1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Green"#) -}
+53079fee3bcf552af44919357f03e897
+  $tc'Height :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14807467640322342029##
+                   63111140833192843##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Height1) -}
+54fb8e63ad35ce4197775a0d92df413d
+  $tc'Height1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Height"#) -}
+c9ced48c649ab3a62a7fe34dad9c3443
   $tc'Identity :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   2479268832385044681##
-                   13394608104648034112##
+                   3859213809077878912##
+                   14819308746641498477##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tc'Identity1) -}
-8db0ecb0cd6c16d6d4409ea03d6de19f
+8d657d632b44fb09d5d67b6f23a36886
   $tc'Identity1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Identity"#) -}
-bf38ca2290351daee23d805b8b189a3c
+71650cf339ce323c0caa444babc463ea
+  $tc'Magenta :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14201777562105153855##
+                   3693636273173814006##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Magenta1) -}
+a53def2516d35f06f7b947ce7ce3bbdb
+  $tc'Magenta1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Magenta"#) -}
+74d2d017fb8d1742e441ebd0b413f4d5
   $tc'Matrix :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   6989871312003034660##
-                   8075611777853000144##
+                   2277861486062108779##
+                   7760548261498085741##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tc'Matrix1) -}
-4e56e2c044d5caa37ffb611491665790
+f5fd03693b7d1f3a86a544ba151fc003
   $tc'Matrix1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Matrix"#) -}
-ca7029dadd71b7d0b8d74aa5027a917a
+e163e822306cb3771b7f50dccfae3159
+  $tc'Outline :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4104502594418600650##
+                   14402172978891582665##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Outline1) -}
+a47ea0b4e6f1b4484b3a7f38f7b57667
+  $tc'Outline1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Outline"#) -}
+be98301b50488618bc9c9f7c623d77cc
+  $tc'Radius :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2594647059720465646##
+                   11273150630643771517##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Radius1) -}
+6d6f3812de70c0395caad6b855f2bb72
+  $tc'Radius1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Radius"#) -}
+f85a532c63e7abf1811741dcc166f097
+  $tc'Red :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2395811078761364797##
+                   13747595122951687263##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Red1) -}
+47bf23465aa7baa31871bcfc6a6200bd
+  $tc'Red1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Red"#) -}
+8b70e4bc7fcc04458f8d243e0c383bb2
   $tc'Rotate :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   7086815657954713154##
-                   7591124015438128562##
+                   8800313420604984195##
+                   17941416836244691488##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tc'Rotate1) -}
-e73126c12bc0f38490d090c2b979d8bb
+ed61f6b7945afdae218c6cfa02e3528c
   $tc'Rotate1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Rotate"#) -}
-0299acb7b3f528774af26b71f50ac774
+faddc985c5f01961a48a9c7411781378
   $tc'Scale :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   1357004409925677202##
-                   15504501088618064211##
+                   12615209849812232234##
+                   12933517039942590093##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tc'Scale1) -}
-5959486551126b6e8cb7096bf53e1027
+704fc34b0fc024cb5e69a3f978fbf534
   $tc'Scale1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Scale"#) -}
-be5a1dee97fbb24afbcef132942630f9
+f4130b3fd97de892943ad17def149eba
   $tc'Square :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   13333229486989915249##
-                   13050059190892378448##
+                   10300078622502925431##
+                   8440613199179958021##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tc'Square1) -}
-75214d5e1f2551474b10577b6aa42c42
+d9048c1bfeaeb76bcf62d7767332ce0f
   $tc'Square1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Square"#) -}
-1aefda61d37ed80ff4c77cc5c826c10c
+9bc64b13dd8b01d23a126ff47cae3360
+  $tc'Stroke :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17617055552662844816##
+                   11694470184714397139##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Stroke1) -}
+0a4d9a0f4aff25b5baa2b991e157a1fb
+  $tc'Stroke1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Stroke"#) -}
+20020837bc45705cefc9d4bdb80e4f11
   $tc'Translate :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   8264529410761173322##
-                   6192605114545371550##
+                   17957977717377522557##
+                   13798275276247028274##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tc'Translate1) -}
-db41157b6a0a5396ca775de6e3aa12da
+36383a993fb026a0aa196faafccfdd10
   $tc'Translate1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Translate"#) -}
-e79230fd69c3b45d7df155ca3f4d1da8
+4af8cdf7ab5e5931b1fbf2e97bcfe309
   $tc'Vector :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   18307684851493271464##
-                   8565617232284234311##
+                   8027218389829786519##
+                   15187364398925271009##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tc'Vector1) -}
-41462c90a648e4a7e927dc6cf62b6847
+1a50580ae14db1866f4c93d707bdd342
   $tc'Vector1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Vector"#) -}
-a4db45402b137ae74b5e82e68b6f835a
+e50380a9b8b1a45d0db8e26dd8f2b5bd
+  $tc'White :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2299927385603765974##
+                   13179900844740026716##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'White1) -}
+44087d2bf372ba401a632040e1634a09
+  $tc'White1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'White"#) -}
+bb76c237905c25602d2328eed572cfe6
+  $tc'Width :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1855070833648100248##
+                   17586867981159880538##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Width1) -}
+66958d072ad30e5ede7a62f504b76a6d
+  $tc'Width1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Width"#) -}
+e558b2972ff24ebc1aa003bcf2325ccb
+  $tc'X :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11411375709852187637##
+                   14823107042764865823##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'X1) -}
+86f3e3c338a70f45eed429343d2ce84d
+  $tc'X1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'X"#) -}
+b1b65e2195959ed05359023d65b6f238
+  $tc'Y :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16801807122598830786##
+                   11414514924426243277##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Y1) -}
+488d5c22c56c7d5b72a451624c263cbb
+  $tc'Y1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Y"#) -}
+0f36e900584e64a7981efc67227d58dc
+  $tc'Yellow :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6611708021328961708##
+                   17739823569327621269##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tc'Yellow1) -}
+43a21fcbc502d713603e3237d10e526e
+  $tc'Yellow1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Yellow"#) -}
+1c716708a31d98473468d1bcb90c3d0c
+  $tcColor :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15199557283284753467##
+                   5238291380491989208##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tcColor1) -}
+08efe273ebba3088e9a84628415238cf
+  $tcColor1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Color"#) -}
+909401ce0d46dfc815c546b16c5a26d9
   $tcMatrix :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   916295002534293233##
-                   10933433648784646200##
+                   15074412517458278607##
+                   3337087683592560116##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tcMatrix1) -}
-b2e5cc74469d087fb49585d7eee019d5
+6a52529e7b3e44a3072cecbd899ab80a
   $tcMatrix1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "Matrix"#) -}
-564b27714cbc65b828e6fca61fb1d4f2
+bf89600dc69f2a27b5e8d0af63ca7eb8
   $tcShape :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   1240001885970259283##
-                   3687106403916333239##
+                   9692796460487025729##
+                   2509149896309656099##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tcShape1) -}
-5bda782d153a42f6562589c89f203c91
+0949d14437239145da663eaf9b20a28a
   $tcShape1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "Shape"#) -}
-8d40d5cc1efd22d42b532c604d4cd5ec
+9dfbe0bf29ad251642b29a17fe6bfcac
+  $tcStyle :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4770491067580015174##
+                   11394008040277667079##
+                   Shapes.Shape.$trModule
+                   Shapes.Shape.$tcStyle1) -}
+b6ab1c0be5d669326b69d463496a25ad
+  $tcStyle1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Style"#) -}
+db9aa025644540060f487513a7cac2b1
   $tcTransform :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   4201155829593902060##
-                   2092573790884531241##
+                   15168247350989238249##
+                   9239561356437415208##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tcTransform1) -}
-81c917e5efe74c797d8ec372462b4ab3
+9b32930bbd8af2fe248685fcaec96bea
   $tcTransform1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "Transform"#) -}
-803aacd90966e829e8eb0925dad73c7b
+47bf19f9f2ca09e735fa3ca59f3f673c
   $tcVector :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   18116617977342105720##
-                   17311069324937095694##
+                   15112213841696071184##
+                   6190992642706834838##
                    Shapes.Shape.$trModule
                    Shapes.Shape.$tcVector1) -}
-3b4023a3c5461a5748601462dd5f11c1
+fadc1f2e48f645b81e74af604d25aa41
   $tcVector1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "Vector"#) -}
-32a1e1e0f389b7d6c57443e387d3715e
+7e311ee744e1cd574ba940f12c3a358a
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.Module
                    Shapes.Shape.$trModule2
                    Shapes.Shape.$trModule1) -}
-dcaee76c1d9ab6d5423fbd5b50598655
+5c2de33250b76c7d0ed834d32fc0953e
   $trModule1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "Shapes.Shape"#) -}
-4201d11bde16520ffd5036a1ae00397e
+b113e72f59d98205069cb27632f19a33
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS
-                   "svg-scotty-0.1.0.0-DQsfCGvSvlK9laSdPuUlpb"#) -}
-bba473d3a4ede384625f663b9a37ee93
+                   "svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO"#) -}
+6bc629e8b39f1f5d02c0da8d4b414405
   $w$creadPrec ::
     GHC.Prim.Int#
     -> forall b.
@@ -1087,7 +1973,7 @@ bba473d3a4ede384625f663b9a37ee93
                          (Text.ParserCombinators.ReadP.N:ReadP[0] <()>_R)
                            @ b
                            k) }) -}
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   $w$creadPrec1 ::
     GHC.Prim.Int#
     -> forall b.
@@ -1145,8 +2031,37 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                          (Text.ParserCombinators.ReadP.N:ReadP[0] <()>_R)
                            @ b
                            k) }) -}
-4e92ed93ebf9fb9269a192f04f3888fe
+14667b7358bfbe67333ede1b0609373e
+  $w$creadPrec2 ::
+    GHC.Prim.Int#
+    -> forall b.
+       (Shapes.Shape.Style -> Text.ParserCombinators.ReadP.P b)
+       -> Text.ParserCombinators.ReadP.P b
+  {- Arity: 2, Strictness: <S,U><L,C(U)>, Inline: [0] -}
+45d11fdb7084a43448187cf33934a230
   $w$cshowsPrec ::
+    Shapes.Shape.Color -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: Shapes.Shape.Color) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Shapes.Shape.Black
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.Shape.$fReadColor35 w1
+                   Shapes.Shape.Red
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.Shape.$fReadColor32 w1
+                   Shapes.Shape.Green
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.Shape.$fReadColor29 w1
+                   Shapes.Shape.Yellow
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.Shape.$fReadColor26 w1
+                   Shapes.Shape.Blue
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.Shape.$fReadColor23 w1
+                   Shapes.Shape.Magenta
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.Shape.$fReadColor20 w1
+                   Shapes.Shape.Cyan
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.Shape.$fReadColor17 w1
+                   Shapes.Shape.White
+                   -> GHC.Base.++ @ GHC.Types.Char Shapes.Shape.$fReadColor14 w1 }) -}
+55a9600a7a3fb0cae1d595cabe326bc2
+  $w$cshowsPrec1 ::
     GHC.Prim.Int#
     -> Shapes.Shape.Vector -> Shapes.Shape.Vector -> GHC.Show.ShowS
   {- Arity: 3,
@@ -1158,12 +2073,12 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                  let {
                    f :: GHC.Base.String -> GHC.Base.String
                    = case ww1 of ww3 { Shapes.Shape.Vector ww4 ww5 ->
-                     Shapes.Shape.$w$cshowsPrec1 11# ww4 ww5 }
+                     Shapes.Shape.$w$cshowsPrec2 11# ww4 ww5 }
                  } in
                  let {
                    g :: GHC.Base.String -> GHC.Base.String
                    = case ww2 of ww3 { Shapes.Shape.Vector ww4 ww5 ->
-                     Shapes.Shape.$w$cshowsPrec1 11# ww4 ww5 }
+                     Shapes.Shape.$w$cshowsPrec2 11# ww4 ww5 }
                  } in
                  case GHC.Prim.tagToEnum#
                         @ GHC.Types.Bool
@@ -1186,8 +2101,8 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                                  @ GHC.Types.Char
                                  GHC.Show.showSpace1
                                  (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 x))))) }) -}
-9cbbef53a022386db4f527dabb605bdd
-  $w$cshowsPrec1 ::
+c6598da1b87ec3a71c25154a3ad2dcc1
+  $w$cshowsPrec2 ::
     GHC.Prim.Int#
     -> GHC.Types.Double -> GHC.Types.Double -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <S,U><L,1*U(U)><L,1*U(U)>, Inline: [0],
@@ -1231,8 +2146,8 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                                  @ GHC.Types.Char
                                  GHC.Show.showSpace1
                                  (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 x))))) }) -}
-98d2110bb9e0a6fa765ff90fdfd117c7
-  $w$cshowsPrec2 ::
+51563dfb73c79536043d6caa5f672d8f
+  $w$cshowsPrec3 ::
     Shapes.Shape.Shape -> GHC.Base.String -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
      Unfolding: (\ (w :: Shapes.Shape.Shape) (w1 :: GHC.Base.String) ->
@@ -1243,7 +2158,11 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                    -> GHC.Base.++ @ GHC.Types.Char Shapes.Shape.$fReadShape12 w1
                    Shapes.Shape.Square
                    -> GHC.Base.++ @ GHC.Types.Char Shapes.Shape.$fReadShape9 w1 }) -}
-97159914fb33c088ce647cd6641d98d1
+14667b7358bfbe67333ede1b0609373e
+  $w$cshowsPrec4 ::
+    GHC.Prim.Int# -> Shapes.Shape.Style -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
+a7f255505854b1623dd212ea3dac8de0
   $wrotate :: GHC.Types.Double -> (# Shapes.Shape.Matrix #)
   {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U)>, Inline: [0],
      Unfolding: (\ (w :: GHC.Types.Double) ->
@@ -1255,54 +2174,73 @@ c73b9fec0645eeaabd90fd0db86a7c3d
                       (Shapes.Shape.Vector
                          (GHC.Float.sinDouble w)
                          (GHC.Float.cosDouble w)) #)) -}
-483781274b0d36dbe4f05e5e497c361e
+440b453f59130a05eb5400eb1297386a
   (<+>) ::
     Shapes.Shape.Transform
     -> Shapes.Shape.Transform -> Shapes.Shape.Transform
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m4,
      Unfolding: InlineRule (0, True, True) Shapes.Shape.Compose -}
-8fc23754a649adca915eca3a2f6c64d8
-  type Drawing = [(Shapes.Shape.Transform, Shapes.Shape.Shape)]
-bba473d3a4ede384625f663b9a37ee93
+45d11fdb7084a43448187cf33934a230
+  data Color
+    = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White
+4b7c00d55f1240d01fbb7f4001539243
+  type Drawing =
+    [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+      Shapes.Shape.Stylesheet)]
+6bc629e8b39f1f5d02c0da8d4b414405
   data Matrix = Matrix Shapes.Shape.Vector Shapes.Shape.Vector
-fc1dc098add40aa10b8b7ddaeb2c9300
+d69fb0731e31f0172a569f381a730631
   type Point = Shapes.Shape.Vector
-98d2110bb9e0a6fa765ff90fdfd117c7
+51563dfb73c79536043d6caa5f672d8f
   data Shape = Empty | Circle | Square
-a89dcae751d8b2de785db28570a69ceb
+14667b7358bfbe67333ede1b0609373e
+  data Style
+    = Stroke Shapes.Shape.Color
+    | Fill Shapes.Shape.Color
+    | Outline GHC.Types.Float
+    | X GHC.Types.Float
+    | Y GHC.Types.Float
+    | Width GHC.Types.Float
+    | Height GHC.Types.Float
+    | CenterX GHC.Types.Float
+    | CenterY GHC.Types.Float
+    | Radius GHC.Types.Float
+51f897600cebf7d36453f3272a2aae5c
+  type Stylesheet = [Shapes.Shape.Style]
+5eab733712a31d57804fc4efd820cb2f
   data Transform
     = Identity
     | Translate Shapes.Shape.Vector
     | Scale Shapes.Shape.Vector
     | Compose Shapes.Shape.Transform Shapes.Shape.Transform
     | Rotate Shapes.Shape.Matrix
-c73b9fec0645eeaabd90fd0db86a7c3d
+81d8ffbb3fb0b9e24d7c38ea57cca5f9
   data Vector = Vector GHC.Types.Double GHC.Types.Double
-b27eb74cfaa114e07b6c894f2e10b0fa
+9b1ebe10fe2e70633f98add0621483b7
   circle :: Shapes.Shape.Shape
   {- HasNoCafRefs,
      Unfolding: InlineRule (0, True, True) Shapes.Shape.Circle -}
-0f6219fa21018a08e30378c4cbfcc391
+0266745cae65a9cf5ee282487e9bfa9b
   empty :: Shapes.Shape.Shape
   {- HasNoCafRefs,
      Unfolding: InlineRule (0, True, True) Shapes.Shape.Empty -}
-5dcc1f0811fc9c92a63777bd9ebed41a
+487345b575dc40b7de0e9c70b39ba4c8
   getX :: Shapes.Shape.Vector -> GHC.Types.Double
   {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U(U),A)>m,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Shapes.Shape.Vector) ->
                  case ds of wild { Shapes.Shape.Vector x y -> x }) -}
-fcb98c0be5a39def72a0be117b1a06e7
+6cf3a34e294f81b9cdaca5d27b781bd1
   getY :: Shapes.Shape.Vector -> GHC.Types.Double
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U(U))>m,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Shapes.Shape.Vector) ->
                  case ds of wild { Shapes.Shape.Vector x y -> y }) -}
-46060c0636d0b04005e9a250d19d07b8
+9c55fd55c3b4c7880ce691ba3e2abdc6
   identity :: Shapes.Shape.Transform
   {- HasNoCafRefs,
      Unfolding: InlineRule (0, True, True) Shapes.Shape.Identity -}
-d36b2fb647b1a0968c2587aeef9b1e39
+80d50184906cbdccba80687f8f08baff
   inside ::
     Shapes.Shape.Point -> Shapes.Shape.Drawing -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U(U),U(U))><S,1*U>,
@@ -1312,21 +2250,23 @@ d36b2fb647b1a0968c2587aeef9b1e39
                 (<Shapes.Shape.Point>_R
                  ->_R <Shapes.Shape.Drawing>_R
                  ->_R Data.Monoid.N:Any[0]) -}
-6a6156d7abcc49a3060e8c72c6e98e86
+47c0211c4972884995fb3636a6645103
   inside1 ::
     Shapes.Shape.Point -> Shapes.Shape.Drawing -> Data.Monoid.Any
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U(U),U(U))><S,1*U>,
      Unfolding: (\ (p :: Shapes.Shape.Point)
                    (d :: Shapes.Shape.Drawing) ->
                  letrec {
-                   go :: [(Shapes.Shape.Transform, Shapes.Shape.Shape)]
+                   go :: [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                           Shapes.Shape.Stylesheet)]
                          -> Data.Monoid.Any
                      {- Arity: 1, Strictness: <S,1*U> -}
-                   = \ (ds :: [(Shapes.Shape.Transform, Shapes.Shape.Shape)]) ->
+                   = \ (ds :: [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                                Shapes.Shape.Stylesheet)]) ->
                      case ds of wild {
                        [] -> GHC.Types.False `cast` (Sym (Data.Monoid.N:Any[0]))
                        : y ys
-                       -> case y of wild1 { (,) t s ->
+                       -> case y of wild1 { (,,) t s ds1 ->
                           case s of wild2 {
                             Shapes.Shape.Empty -> go ys
                             Shapes.Shape.Circle
@@ -1426,11 +2366,11 @@ d36b2fb647b1a0968c2587aeef9b1e39
                                          (Sym (Data.Monoid.N:Any[0])) } } } } } } }
                  } in
                  go d) -}
-66ea6a20b1be466568f42623ec0d9607
+5e74e55c620b9751d72223a68a20ca6a
   point :: GHC.Types.Double -> GHC.Types.Double -> Shapes.Shape.Point
   {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m,
      Unfolding: InlineRule (0, True, True) Shapes.Shape.Vector -}
-34f5f8e56e00dd2ce13b774e51308e03
+c1281d67d3daaaa4c4daf3e9e2aa393c
   rotate :: GHC.Types.Double -> Shapes.Shape.Transform
   {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U)>m5,
      Inline: INLINE[0],
@@ -1438,34 +2378,42 @@ d36b2fb647b1a0968c2587aeef9b1e39
                 (\ (w :: GHC.Types.Double) ->
                  case Shapes.Shape.$wrotate w of ww { Unit# ww1 ->
                  Shapes.Shape.Rotate ww1 }) -}
-be4c9f7ec249c4a2aa24e9853c1eb71e
+1b21697a8d9409b8936bd7fa5c958b3e
   scale :: Shapes.Shape.Vector -> Shapes.Shape.Transform
   {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m3,
      Unfolding: InlineRule (0, True, True) Shapes.Shape.Scale -}
-c06c831118c3ba1a08fb509a5494c376
+63a48fa3ad1ce49740f0d7ecc403d3a2
   square :: Shapes.Shape.Shape
   {- HasNoCafRefs,
      Unfolding: InlineRule (0, True, True) Shapes.Shape.Square -}
-b8f4ed34722c9893839be2345674a7da
+06d25c936cc3780f139639c3ab93e62d
   transform ::
     Shapes.Shape.Transform -> Shapes.Shape.Point -> Shapes.Shape.Point
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U(U(U),U(U))> -}
-80108005c600d475a57c6aea9e4fe07b
+c782d89a68a255d7d0a6c9287ee52ea8
   translate :: Shapes.Shape.Vector -> Shapes.Shape.Transform
   {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m2,
      Unfolding: InlineRule (0, True, True) Shapes.Shape.Translate -}
+instance [safe] GHC.Read.Read [Shapes.Shape.Color]
+  = Shapes.Shape.$fReadColor
 instance [safe] GHC.Read.Read [Shapes.Shape.Matrix]
   = Shapes.Shape.$fReadMatrix
 instance [safe] GHC.Read.Read [Shapes.Shape.Shape]
   = Shapes.Shape.$fReadShape
+instance [safe] GHC.Read.Read [Shapes.Shape.Style]
+  = Shapes.Shape.$fReadStyle
 instance [safe] GHC.Read.Read [Shapes.Shape.Transform]
   = Shapes.Shape.$fReadTransform
 instance [safe] GHC.Read.Read [Shapes.Shape.Vector]
   = Shapes.Shape.$fReadVector
+instance [safe] GHC.Show.Show [Shapes.Shape.Color]
+  = Shapes.Shape.$fShowColor
 instance [safe] GHC.Show.Show [Shapes.Shape.Matrix]
   = Shapes.Shape.$fShowMatrix
 instance [safe] GHC.Show.Show [Shapes.Shape.Shape]
   = Shapes.Shape.$fShowShape
+instance [safe] GHC.Show.Show [Shapes.Shape.Style]
+  = Shapes.Shape.$fShowStyle
 instance [safe] GHC.Show.Show [Shapes.Shape.Transform]
   = Shapes.Shape.$fShowTransform
 instance [safe] GHC.Show.Show [Shapes.Shape.Vector]

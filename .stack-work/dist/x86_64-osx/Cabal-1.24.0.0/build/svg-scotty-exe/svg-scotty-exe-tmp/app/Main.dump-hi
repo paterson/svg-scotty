@@ -1,31 +1,371 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-14 10:35:13.073358 UTC
+2016-11-20 15:44:51.74453 UTC
 
 interface main@main:Main 8001
-  interface hash: 29d5783ef6ca2315a9f672b3c0cfebb7
-  ABI hash: dc7d924090c6e68813c3959db0575670
-  export-list hash: bc47bdb16bea96276b5631d80064ae5f
-  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
-  flag hash: 985d0db2508930ed10bcadf150487b86
+  interface hash: 5ce2b9be4aa7998e48bf554afbde0b6b
+  ABI hash: a11944b58f5397193cb72893f7bc0c43
+  export-list hash: 764b60b0b78be0351a91e52053644568
+  orphan hash: 9cdeb9c8ab1fd2df4a3c66fc0b84fe48
+  flag hash: 0bae08d0e68337cb6f89aed4329c212b
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Main.drawingFromText
   Main.main
 module dependencies:
-package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
-                      integer-gmp-1.0.0.1
-                      svg-scotty-0.1.0.0@svg-scotty-0.1.0.0-JpbU09Yukz5A6rxwgiiP9n
-orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
-family instance modules: base-4.9.0.0:Control.Applicative
-                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
-                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+package dependencies: aeson-0.11.2.1@aeson-0.11.2.1-5ZQWuTFmffALcfpzDCXoOz
+                      appar-0.1.4@appar-0.1.4-1in4Ewd8JBkAYDZSWXLSe0
+                      array-0.5.1.1@array-0.5.1.1
+                      async-2.1.0@async-2.1.0-J6Pl8k3L4PKGEpjYdgwiIf
+                      attoparsec-0.13.1.0@attoparsec-0.13.1.0-5Olk1S76r1CDYzFS6V3sZR
+                      auto-update-0.1.4@auto-update-0.1.4-GAesfFmqoZzBz6e09kRyzb
+                      base-4.9.0.0 binary-0.8.3.0@binary-0.8.3.0
+                      blaze-builder-0.4.0.2@blaze-builder-0.4.0.2-KWDLbdBYSBoALiMW0LHIz1
+                      blaze-markup-0.7.1.0@blaze-markup-0.7.1.0-5a5pBG0fO8kJX4ke3K7j3D
+                      blaze-svg-0.3.6@blaze-svg-0.3.6-KnzXaminLUoIWcRwpCsUT
+                      byteorder-1.0.4@byteorder-1.0.4-BbL4c17EpZrL9PcZm0xys9
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      case-insensitive-1.2.0.7@case-insensitive-1.2.0.7-FlqweN7AuKj9EdU2arVEt4
+                      containers-0.5.7.1@containers-0.5.7.1
+                      data-default-class-0.1.2.0@data-default-class-0.1.2.0-FYQpjIylblBDctdkHAFeXA
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.2.6.2@directory-1.2.6.2
+                      dlist-0.8.0.2@dlist-0.8.0.2-GWAMmbX9rLg3tqrbOizHGv
+                      exceptions-0.8.3@exceptions-0.8.3-7py7fmRxowDFpHmiHGKrTb
+                      filepath-1.4.1.0@filepath-1.4.1.0
+                      ghc-boot-th-8.0.1@ghc-boot-th-8.0.1 ghc-prim-0.5.0.0
+                      hashable-1.2.4.0@hashable-1.2.4.0-EMu4H7FB10MAl6hwKw992G
+                      http-date-0.0.6.1@http-date-0.0.6.1-150spKQYCuoIrltdbMmYGs
+                      http-types-0.9.1@http-types-0.9.1-8WdUZL4twHzANJbxvb1Aoj
+                      http2-1.6.2@http2-1.6.2-FAbjmjQAybhLjdn6FTjXH8 integer-gmp-1.0.0.1
+                      iproute-1.7.1@iproute-1.7.1-9hsGfRvggCmFA0ueZi5Sd9
+                      lifted-base-0.2.3.8@lifted-base-0.2.3.8-KLkd0w1UJqu6nE8oVTTEBy
+                      mmorph-1.0.6@mmorph-1.0.6-3xsw6wg6Vs2JmwrJVsaYA0
+                      monad-control-1.0.1.0@monad-control-1.0.1.0-HoNEBoNfniX3vjSfkI7WTT
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      network-2.6.3.1@network-2.6.3.1-G4Up1CPKbp7DeFsnywOnGG
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      psqueues-0.2.2.2@psqueues-0.2.2.2-Abmw1tivvf7JJikDhHX0px
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      regex-base-0.93.2@regex-base-0.93.2-4lnOy3Rb1yfISFVEXVfJuH
+                      regex-compat-0.95.1@regex-compat-0.95.1-JPDhOGKcrkD8S1t3VsLLUt
+                      regex-posix-0.95.2@regex-posix-0.95.2-Fy6xYMm8dnjHHt23b8RdmR
+                      resourcet-1.1.8.1@resourcet-1.1.8.1-6TO3ZRd53Tm1jxZF0DDRMR
+                      scientific-0.3.4.9@scientific-0.3.4.9-6oTYuCcx6H5BsTGU7D2Gk3
+                      scotty-0.11.0@scotty-0.11.0-HxkPgGTsYd16WThKeBjZgp
+                      simple-sendfile-0.2.25@simple-sendfile-0.2.25-FZS0Stqtwd5AOyFRQgM4IV
+                      stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF
+                      streaming-commons-0.1.16@streaming-commons-0.1.16-9hEivxR9E52HXPtNZCYgC8
+                      stringsearch-0.3.6.6@stringsearch-0.3.6.6-KFZuUgmBRr4GSrTHv7XvSl
+                      svg-scotty-0.1.0.0@svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO
+                      tagged-0.8.5@tagged-0.8.5-CtgV6EcN0do8F92i1S6iYx
+                      template-haskell-2.11.0.0
+                      text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      transformers-base-0.4.4@transformers-base-0.4.4-25SoAegOdaF8rLEnnb5jPI
+                      unix-2.7.2.0@unix-2.7.2.0
+                      unix-compat-0.4.2.0@unix-compat-0.4.2.0-GNHotEMWE5dJ4oYFhgibIV
+                      unordered-containers-0.2.7.1@unordered-containers-0.2.7.1-Eo9jd5DMz45DhBLCG8skzW
+                      vault-0.3.0.6@vault-0.3.0.6-CA9Xj82tAPe9nD32xVMgDG
+                      vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6
+                      wai-3.2.1.1@wai-3.2.1.1-f77bMYZGLQBAD3XJrvGiW
+                      wai-extra-3.0.19@wai-extra-3.0.19-I0zPXSGFPqDD3SArdiCGY1
+                      warp-3.2.9@warp-3.2.9-7vlA9JtHn4oKB02ijj4JjZ
+                      word8-0.1.2@word8-0.1.2-2E1SgvvAV2fK8vZPDHbRan
+orphans: aeson-0.11.2.1@aeson-0.11.2.1-5ZQWuTFmffALcfpzDCXoOz:Data.Aeson.Types.Generic
+         aeson-0.11.2.1@aeson-0.11.2.1-5ZQWuTFmffALcfpzDCXoOz:Data.Aeson.Types.Instances
+         attoparsec-0.13.1.0@attoparsec-0.13.1.0-5Olk1S76r1CDYzFS6V3sZR:Data.Attoparsec.ByteString.Char8
+         attoparsec-0.13.1.0@attoparsec-0.13.1.0-5Olk1S76r1CDYzFS6V3sZR:Data.Attoparsec.Text.Internal
+         base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hashable-1.2.4.0@hashable-1.2.4.0-EMu4H7FB10MAl6hwKw992G:Data.Hashable.Generic
+         network-2.6.3.1@network-2.6.3.1-G4Up1CPKbp7DeFsnywOnGG:Network.Socket
+         regex-base-0.93.2@regex-base-0.93.2-4lnOy3Rb1yfISFVEXVfJuH:Text.Regex.Base.Context
+         regex-posix-0.95.2@regex-posix-0.95.2-Fy6xYMm8dnjHHt23b8RdmR:Text.Regex.Posix.ByteString
+         regex-posix-0.95.2@regex-posix-0.95.2-Fy6xYMm8dnjHHt23b8RdmR:Text.Regex.Posix.ByteString.Lazy
+         regex-posix-0.95.2@regex-posix-0.95.2-Fy6xYMm8dnjHHt23b8RdmR:Text.Regex.Posix.Sequence
+         regex-posix-0.95.2@regex-posix-0.95.2-Fy6xYMm8dnjHHt23b8RdmR:Text.Regex.Posix.String
+         stm-2.4.4.1@stm-2.4.4.1-4z2NRWnB0NIIUvSJsHW0kF:Control.Monad.STM
+         text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text
+         text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text.Lazy
+         text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text.Show
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+family instance modules: attoparsec-0.13.1.0@attoparsec-0.13.1.0-5Olk1S76r1CDYzFS6V3sZR:Data.Attoparsec.Internal.Types
+                         base-4.9.0.0:Control.Applicative base-4.9.0.0:Data.Complex
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Compose
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.Functor.Product base-4.9.0.0:Data.List.NonEmpty
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Semigroup
+                         base-4.9.0.0:Data.Type.Equality base-4.9.0.0:Data.Version
+                         base-4.9.0.0:Data.Void base-4.9.0.0:GHC.Exts
                          base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
                          base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         dlist-0.8.0.2@dlist-0.8.0.2-GWAMmbX9rLg3tqrbOizHGv:Data.DList
+                         ghc-boot-th-8.0.1@ghc-boot-th-8.0.1:GHC.LanguageExtensions.Type
+                         iproute-1.7.1@iproute-1.7.1-9hsGfRvggCmFA0ueZi5Sd9:Data.IP.Addr
+                         iproute-1.7.1@iproute-1.7.1-9hsGfRvggCmFA0ueZi5Sd9:Data.IP.Range
+                         monad-control-1.0.1.0@monad-control-1.0.1.0-HoNEBoNfniX3vjSfkI7WTT:Control.Monad.Trans.Control
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         resourcet-1.1.8.1@resourcet-1.1.8.1-6TO3ZRd53Tm1jxZF0DDRMR:Control.Monad.Trans.Resource.Internal
+                         scotty-0.11.0@scotty-0.11.0-HxkPgGTsYd16WThKeBjZgp:Web.Scotty.Internal.Types
+                         tagged-0.8.5@tagged-0.8.5-CtgV6EcN0do8F92i1S6iYx:Data.Tagged
+                         template-haskell-2.11.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text
+                         text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unordered-containers-0.2.7.1-Eo9jd5DMz45DhBLCG8skzW:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unordered-containers-0.2.7.1-Eo9jd5DMz45DhBLCG8skzW:Data.HashSet
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-BEDZb5o2QOhGbIm6ky7rl6:Data.Vector.Unboxed.Base
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
-import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
-import  -/  svg-scotty-0.1.0.0@svg-scotty-0.1.0.0-JpbU09Yukz5A6rxwgiiP9n:Lib d5d987a6ef55322f91c2247424f76fba
+import  -/  base-4.9.0.0:Text.Read 9c1be14f7e5eac8b18bcb566c5763677
+import  -/  blaze-svg-0.3.6@blaze-svg-0.3.6-KnzXaminLUoIWcRwpCsUT:Text.Blaze.Svg.Renderer.Text 9989d5a7e362715b00f3cf1ad0ab7766
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 8f3eaf1368a7ea27857993e3febae6a3
+import  -/  scotty-0.11.0@scotty-0.11.0-HxkPgGTsYd16WThKeBjZgp:Web.Scotty d62c5eb1eaa2c0af1e0104bb20948ca5
+import  -/  svg-scotty-0.1.0.0@svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO:Shapes.Render 4ef22eac068ee540a7234ae529f82d92
+import  -/  svg-scotty-0.1.0.0@svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO:Shapes.Shape 99df9c9ca644cccfb695f77071125fb3
+import  -/  text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text 00261e8e5b51b919ebe8da24b37dfdbd
+import  -/  text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text.Lazy f186ae58bc5c347866d45b38531e12a0
+import  -/  text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text.Show c6fc4b1a4431943028eb6eb78b495e09
+0b96c7eeb589bb9949fd7d0444ffccd1
+  $s$fRead(,,) ::
+    GHC.Read.Read
+      (Shapes.Shape.Transform, Shapes.Shape.Shape, [Shapes.Shape.Style])
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Shapes.Shape.Transform, Shapes.Shape.Shape,
+                     [Shapes.Shape.Style])
+                  Main.$s$fRead(,,)_$s$fRead(,,)_$creadsPrec
+                  Main.$s$fRead(,,)_$s$fRead(,,)_$creadList
+                  (GHC.Read.$fRead(,,)_$creadPrec
+                     @ Shapes.Shape.Transform
+                     @ Shapes.Shape.Shape
+                     @ [Shapes.Shape.Style]
+                     Shapes.Shape.$fReadTransform
+                     Shapes.Shape.$fReadShape
+                     Main.$s$fRead(,,)1)
+                  (GHC.Read.$fRead(,,)_$creadListPrec
+                     @ Shapes.Shape.Transform
+                     @ Shapes.Shape.Shape
+                     @ [Shapes.Shape.Style]
+                     Shapes.Shape.$fReadTransform
+                     Shapes.Shape.$fReadShape
+                     Main.$s$fRead(,,)1) -}
+384be34eea840ae7319f4bb4870204db
+  $s$fRead(,,)1 :: GHC.Read.Read [Shapes.Shape.Style]
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Main.$s$fRead(,,)_$s$fRead[] -}
+0de28ff635dc377124546eb466e6c250
+  $s$fRead(,,)_$s$fRead(,,)_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS
+      [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+        [Shapes.Shape.Style])]
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, False)
+                (Text.ParserCombinators.ReadP.run
+                   @ [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                       [Shapes.Shape.Style])]
+                   (GHC.Read.list1
+                      @ (Shapes.Shape.Transform, Shapes.Shape.Shape,
+                         [Shapes.Shape.Style])
+                      (GHC.Read.$fRead(,,)2
+                         @ Shapes.Shape.Transform
+                         @ Shapes.Shape.Shape
+                         @ [Shapes.Shape.Style]
+                         Shapes.Shape.$fReadTransform
+                         Shapes.Shape.$fReadShape
+                         Main.$s$fRead(,,)1)
+                        `cast`
+                      (Trans
+                           (<Text.ParserCombinators.ReadPrec.Prec>_R
+                            ->_R Sym (Text.ParserCombinators.ReadP.N:ReadP[0]
+                                          <(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                                            [Shapes.Shape.Style])>_R))
+                           (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                                     <(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                                       [Shapes.Shape.Style])>_R)))
+                      GHC.Read.$fRead(,)7
+                      @ [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                          [Shapes.Shape.Style])]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                             [Shapes.Shape.Style])]))) -}
+44e92568256e658a2f94df67948a4dfd
+  $s$fRead(,,)_$s$fRead(,,)_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS
+         (Shapes.Shape.Transform, Shapes.Shape.Shape, [Shapes.Shape.Style])
+  {- Arity: 2, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ (Shapes.Shape.Transform, Shapes.Shape.Shape,
+                      [Shapes.Shape.Style])
+                   (GHC.Read.$fRead(,,)2
+                      @ Shapes.Shape.Transform
+                      @ Shapes.Shape.Shape
+                      @ [Shapes.Shape.Style]
+                      Shapes.Shape.$fReadTransform
+                      Shapes.Shape.$fReadShape
+                      Main.$s$fRead(,,)1
+                      eta
+                      @ (Shapes.Shape.Transform, Shapes.Shape.Shape,
+                         [Shapes.Shape.Style])
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ (Shapes.Shape.Transform, Shapes.Shape.Shape,
+                            [Shapes.Shape.Style])))) -}
+220dabf89c3baf62d65baeecf3b0f0dd
+  $s$fRead(,,)_$s$fRead[] :: GHC.Read.Read [Shapes.Shape.Style]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [Shapes.Shape.Style]
+                  Main.$s$fRead(,,)_$s$fRead[]_$creadsPrec
+                  Main.$s$fRead(,,)_$s$fRead[]_$creadList
+                  Shapes.Shape.$fReadStyle_$creadListPrec
+                  (GHC.Read.$fRead[]_$creadListPrec
+                     @ Shapes.Shape.Style
+                     Shapes.Shape.$fReadStyle) -}
+57b1d9b044d432a1b7a28010112517c5
+  $s$fRead(,,)_$s$fRead[]_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS [[Shapes.Shape.Style]]
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, False)
+                (Text.ParserCombinators.ReadP.run
+                   @ [[Shapes.Shape.Style]]
+                   (GHC.Read.list1
+                      @ [Shapes.Shape.Style]
+                      Shapes.Shape.$fReadStyle_$creadListPrec
+                      GHC.Read.$fRead(,)7
+                      @ [[Shapes.Shape.Style]]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ [[Shapes.Shape.Style]]))) -}
+7017791b2f07f00281e10b36ebf9d380
+  $s$fRead(,,)_$s$fRead[]_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS [Shapes.Shape.Style]
+  {- Arity: 2, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ [Shapes.Shape.Style]
+                   ((Shapes.Shape.$fReadStyle_$creadListPrec
+                       `cast`
+                     (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <[Shapes.Shape.Style]>_R)
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0] <[Shapes.Shape.Style]>_R)
+                      @ [Shapes.Shape.Style]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ [Shapes.Shape.Style]))) -}
+690d9265577ed91a8890908ab1fe9791
+  $s$fRead[] ::
+    GHC.Read.Read
+      [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+        Shapes.Shape.Stylesheet)]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                      Shapes.Shape.Stylesheet)]
+                  Main.$s$fRead[]_$s$fRead[]_$creadsPrec
+                  Main.$s$fRead[]_$s$fRead[]_$creadList
+                  (GHC.Read.$fRead(,,)_$creadListPrec
+                     @ Shapes.Shape.Transform
+                     @ Shapes.Shape.Shape
+                     @ [Shapes.Shape.Style]
+                     Shapes.Shape.$fReadTransform
+                     Shapes.Shape.$fReadShape
+                     Main.$s$fRead(,,)1)
+                  (GHC.Read.$fRead[]_$creadListPrec
+                     @ (Shapes.Shape.Transform, Shapes.Shape.Shape,
+                        Shapes.Shape.Stylesheet)
+                     Main.$s$fRead[]1) -}
+724efdbaa4386e6f81cb5e165700b87f
+  $s$fRead[]1 ::
+    GHC.Read.Read
+      (Shapes.Shape.Transform, Shapes.Shape.Shape,
+       Shapes.Shape.Stylesheet)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Main.$s$fRead(,,) -}
+b0901f622767808da03fc5adc960f8b8
+  $s$fRead[]_$s$fRead[]_$creadList ::
+    Text.ParserCombinators.ReadP.ReadS
+      [[(Shapes.Shape.Transform, Shapes.Shape.Shape,
+         Shapes.Shape.Stylesheet)]]
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, False)
+                (Text.ParserCombinators.ReadP.run
+                   @ [[(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                        Shapes.Shape.Stylesheet)]]
+                   (GHC.Read.list1
+                      @ [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                          Shapes.Shape.Stylesheet)]
+                      (GHC.Read.$fRead(,,)_$creadListPrec
+                         @ Shapes.Shape.Transform
+                         @ Shapes.Shape.Shape
+                         @ [Shapes.Shape.Style]
+                         Shapes.Shape.$fReadTransform
+                         Shapes.Shape.$fReadShape
+                         Main.$s$fRead(,,)1)
+                      GHC.Read.$fRead(,)7
+                      @ [[(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                           Shapes.Shape.Stylesheet)]]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ [[(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                              Shapes.Shape.Stylesheet)]]))) -}
+178c2e968a8395d27ae5610945799af2
+  $s$fRead[]_$s$fRead[]_$creadsPrec ::
+    GHC.Types.Int
+    -> Text.ParserCombinators.ReadP.ReadS
+         [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+           Shapes.Shape.Stylesheet)]
+  {- Arity: 2, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (eta :: GHC.Types.Int) ->
+                 Text.ParserCombinators.ReadP.run
+                   @ [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                       Shapes.Shape.Stylesheet)]
+                   (((GHC.Read.$fRead(,,)_$creadListPrec
+                        @ Shapes.Shape.Transform
+                        @ Shapes.Shape.Shape
+                        @ [Shapes.Shape.Style]
+                        Shapes.Shape.$fReadTransform
+                        Shapes.Shape.$fReadShape
+                        Main.$s$fRead(,,)1)
+                       `cast`
+                     (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
+                          <[(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                             Shapes.Shape.Stylesheet)]>_R)
+                       eta)
+                      `cast`
+                    (Text.ParserCombinators.ReadP.N:ReadP[0]
+                         <[(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                            Shapes.Shape.Stylesheet)]>_R)
+                      @ [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                          Shapes.Shape.Stylesheet)]
+                      (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
+                         @ [(Shapes.Shape.Transform, Shapes.Shape.Shape,
+                             Shapes.Shape.Stylesheet)]))) -}
+e774d288b94f7a2d27dd42a477458651
+  $sread1 :: GHC.Read.Read Shapes.Shape.Drawing
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Main.$s$fRead[] -}
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -38,24 +378,249 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-fa81a83467da0453aa3f92add82fcbe4
+c0f4b75227e48fe3e44cf4a5f9cc3d28
+  drawingFromText :: GHC.Base.String -> Shapes.Shape.Drawing
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: GHC.Base.String) ->
+                 case Text.Read.readEither
+                        @ Shapes.Shape.Drawing
+                        Main.$sread1
+                        s of wild {
+                   Data.Either.Left x
+                   -> GHC.Err.errorWithoutStackTrace
+                        @ 'GHC.Types.PtrRepLifted
+                        @ Shapes.Shape.Drawing
+                        x
+                   Data.Either.Right y -> y }) -}
+54d2e1b05dca0b09f56560df51bf41ab
   main :: GHC.Types.IO ()
-  {- Arity: 1, Strictness: <S,U>,
-     Unfolding: InlineRule (0, True, True)
-                Lib.someFunc1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-c5282cfff5a20e9178fc2d58ddd5b94f
+  {- Unfolding: (Web.Scotty.Trans.scottyOptsT
+                   @ GHC.Types.IO
+                   @ GHC.Types.IO
+                   @ Data.Text.Internal.Lazy.Text
+                   GHC.Base.$fMonadIO
+                   Control.Monad.IO.Class.$fMonadIOIO
+                   Main.main7
+                   (GHC.Base.id @ (GHC.Types.IO Network.Wai.Internal.Response))
+                   Main.main1) -}
+45e23268c68fb402d5b4caaae19932d1
   main1 ::
+    Web.Scotty.Internal.Types.ScottyT
+      Data.Text.Internal.Lazy.Text GHC.Types.IO ()
+  {- Unfolding: (Main.main6
+                   Network.HTTP.Types.Method.GET
+                   Main.main3
+                   Main.main2
+                     `cast`
+                   (Trans
+                        (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                  <*>_N
+                                  <Web.Scotty.Internal.Types.ActionEnv>_R
+                                  <Control.Monad.Trans.State.Lazy.StateT
+                                     Web.Scotty.Internal.Types.ScottyResponse GHC.Types.IO>_R
+                                  <Data.Either.Either
+                                     (Web.Scotty.Internal.Types.ActionError
+                                        Data.Text.Internal.Lazy.Text)
+                                     ()>_N))
+                        (Trans
+                             (Sym (Control.Monad.Trans.Except.N:ExceptT[0]
+                                       <Web.Scotty.Internal.Types.ActionError
+                                          Data.Text.Internal.Lazy.Text>_N
+                                       <Control.Monad.Trans.Reader.ReaderT
+                                          Web.Scotty.Internal.Types.ActionEnv
+                                          (Control.Monad.Trans.State.Lazy.StateT
+                                             Web.Scotty.Internal.Types.ScottyResponse
+                                             GHC.Types.IO)>_R
+                                       <()>_N))
+                             (Sym (Web.Scotty.Internal.Types.N:ActionT[0]
+                                       <Data.Text.Internal.Lazy.Text>_N
+                                       <GHC.Types.IO>_R) <()>_N)))) -}
+7b1d7432d9cd11d3eefaccfdf389c588
+  main10 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
-     Unfolding: (GHC.TopHandler.runMainIO1
-                   @ ()
-                   Lib.someFunc1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+     Unfolding: (GHC.TopHandler.runMainIO1 @ () Main.main) -}
+8cd7fe724ce67b23a67284c7d127a193
+  main2 ::
+    Web.Scotty.Internal.Types.ActionEnv
+    -> Control.Monad.Trans.State.Lazy.StateT
+         Web.Scotty.Internal.Types.ScottyResponse
+         GHC.Types.IO
+         (Data.Either.Either
+            (Web.Scotty.Internal.Types.ActionError
+               Data.Text.Internal.Lazy.Text)
+            ())
+  {- Arity: 1 -}
+7cc2ac33af8483cd9b3cade09b76163c
+  main3 :: Web.Scotty.Internal.Types.RoutePattern
+  {- Unfolding: (Web.Scotty.Internal.Types.Capture Main.main4) -}
+9bcac7d7f224f8a997c7fb67a115033a
+  main4 :: Data.Text.Internal.Lazy.Text
+  {- Unfolding: (case GHC.Base.map
+                        @ GHC.Types.Char
+                        @ GHC.Types.Char
+                        Data.Text.Internal.safe
+                        Main.main5 of dt { DEFAULT ->
+                 Web.Scotty.Internal.Types.$fIsStringRoutePattern_outer dt }) -}
+79bc803b3064b45c717d5bdbb307fd17
+  main5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/svg"#) -}
+11e21ac5ce0e1d00bf2e5cbb7d7a0aa8
+  main6 ::
+    Network.HTTP.Types.Method.StdMethod
+    -> Web.Scotty.Internal.Types.RoutePattern
+    -> Web.Scotty.Internal.Types.ActionT
+         Data.Text.Internal.Lazy.Text GHC.Types.IO ()
+    -> Web.Scotty.Internal.Types.ScottyT
+         Data.Text.Internal.Lazy.Text GHC.Types.IO ()
+  {- Unfolding: (Web.Scotty.Route.addroute
+                   @ Data.Text.Internal.Lazy.Text
+                   @ GHC.Types.IO
+                   Web.Scotty.Internal.Types.$fScottyErrorText
+                   Control.Monad.IO.Class.$fMonadIOIO) -}
+d3e810472c23b7b0547840dbe4c1e339
+  main7 :: Web.Scotty.Internal.Types.Options
+  {- Unfolding: (Web.Scotty.Internal.Types.Options
+                   Web.Scotty.Internal.Types.$fDefaultOptions3
+                   Main.main8) -}
+80a36fc3c8ca3faf519918ed3a008fa0
+  main8 :: Network.Wai.Handler.Warp.Settings.Settings
+  {- Unfolding: (Network.Wai.Handler.Warp.Settings.Settings
+                   Main.main9
+                   Network.Wai.Handler.Warp.Settings.defaultSettings16
+                   Network.Wai.Handler.Warp.Settings.defaultOnException1
+                     `cast`
+                   (<GHC.Base.Maybe Network.Wai.Internal.Request>_R
+                    ->_R <GHC.Exception.SomeException>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   Network.Wai.Handler.Warp.Settings.defaultOnExceptionResponse
+                   Network.Wai.Handler.Warp.Settings.defaultSettings14
+                     `cast`
+                   (<Network.Socket.Types.SockAddr>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <GHC.Types.Bool>_R))
+                   Network.Wai.Handler.Warp.Settings.defaultSettings13
+                     `cast`
+                   (<Network.Socket.Types.SockAddr>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   Network.Wai.Handler.Warp.Settings.defaultSettings12
+                   (GHC.Base.Nothing @ Network.Wai.Handler.Warp.Timeout.Manager)
+                   Web.Scotty.Internal.Types.$fDefaultOptions2
+                   Network.Wai.Handler.Warp.Settings.defaultSettings11
+                   Network.Wai.Handler.Warp.Settings.defaultSettings9
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))
+                   Network.Wai.Handler.Warp.Settings.defaultSettings10
+                     `cast`
+                   (<(forall a. GHC.Types.IO a -> GHC.Types.IO a)
+                     -> GHC.Types.IO ()>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   GHC.Types.False
+                   Network.Wai.Handler.Warp.Settings.defaultSettings8
+                     `cast`
+                   (<GHC.Types.IO ()>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   Network.Wai.Handler.Warp.Settings.defaultSettings6
+                   Network.Wai.Handler.Warp.Settings.defaultSettings4
+                   Network.Wai.Handler.Warp.Settings.ProxyProtocolNone
+                   Network.Wai.Handler.Warp.Settings.defaultSettings3
+                   GHC.Types.True
+                   Network.Wai.Handler.Warp.Settings.defaultSettings2
+                     `cast`
+                   (<Network.Wai.Internal.Request>_R
+                    ->_R <Network.HTTP.Types.Status.Status>_R
+                    ->_R <GHC.Base.Maybe GHC.Integer.Type.Integer>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   Network.Wai.Handler.Warp.Settings.defaultSettings1
+                     `cast`
+                   (<Network.Wai.Internal.Request>_R
+                    ->_R <Data.ByteString.Internal.ByteString>_R
+                    ->_R <GHC.Integer.Type.Integer>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   (GHC.Base.Nothing @ GHC.Types.Int)) -}
+3625f9a8b00f607e0785b5369c6a8dab
+  main9 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 3002#) -}
+"SPEC/Main $fRead(,,) @ Transform @ Shape @ [Style]" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                                                  Shapes.Shape.Transform)
+                                                                     ($dRead1 :: GHC.Read.Read
+                                                                                   Shapes.Shape.Shape)
+                                                                     ($dRead2 :: GHC.Read.Read
+                                                                                   [Shapes.Shape.Style])
+  GHC.Read.$fRead(,,) @ Shapes.Shape.Transform
+                      @ Shapes.Shape.Shape
+                      @ [Shapes.Shape.Style]
+                      $dRead
+                      $dRead1
+                      $dRead2
+  = Main.$s$fRead(,,)
+"SPEC/Main $fRead(,,)_$creadList @ Transform @ Shape @ [Style]" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                                                             Shapes.Shape.Transform)
+                                                                                ($dRead1 :: GHC.Read.Read
+                                                                                              Shapes.Shape.Shape)
+                                                                                ($dRead2 :: GHC.Read.Read
+                                                                                              [Shapes.Shape.Style])
+  GHC.Read.$fRead(,,)_$creadList @ Shapes.Shape.Transform
+                                 @ Shapes.Shape.Shape
+                                 @ [Shapes.Shape.Style]
+                                 $dRead
+                                 $dRead1
+                                 $dRead2
+  = Main.$s$fRead(,,)_$s$fRead(,,)_$creadList
+"SPEC/Main $fRead(,,)_$creadsPrec @ Transform @ Shape @ [Style]" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                                                              Shapes.Shape.Transform)
+                                                                                 ($dRead1 :: GHC.Read.Read
+                                                                                               Shapes.Shape.Shape)
+                                                                                 ($dRead2 :: GHC.Read.Read
+                                                                                               [Shapes.Shape.Style])
+  GHC.Read.$fRead(,,)_$creadsPrec @ Shapes.Shape.Transform
+                                  @ Shapes.Shape.Shape
+                                  @ [Shapes.Shape.Style]
+                                  $dRead
+                                  $dRead1
+                                  $dRead2
+  = Main.$s$fRead(,,)_$s$fRead(,,)_$creadsPrec
+"SPEC/Main $fRead[] @ (Transform, Shape, Stylesheet)" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                                                   (Shapes.Shape.Transform,
+                                                                                    Shapes.Shape.Shape,
+                                                                                    Shapes.Shape.Stylesheet))
+  GHC.Read.$fRead[] @ (Shapes.Shape.Transform, Shapes.Shape.Shape,
+                       Shapes.Shape.Stylesheet)
+                    $dRead
+  = Main.$s$fRead[]
+"SPEC/Main $fRead[] @ Style" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                          Shapes.Shape.Style)
+  GHC.Read.$fRead[] @ Shapes.Shape.Style $dRead
+  = Main.$s$fRead(,,)_$s$fRead[]
+"SPEC/Main $fRead[]_$creadList @ (Transform, Shape, Stylesheet)" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                                                              (Shapes.Shape.Transform,
+                                                                                               Shapes.Shape.Shape,
+                                                                                               Shapes.Shape.Stylesheet))
+  GHC.Read.$fRead[]_$creadList @ (Shapes.Shape.Transform,
+                                  Shapes.Shape.Shape, Shapes.Shape.Stylesheet)
+                               $dRead
+  = Main.$s$fRead[]_$s$fRead[]_$creadList
+"SPEC/Main $fRead[]_$creadList @ Style" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                                     Shapes.Shape.Style)
+  GHC.Read.$fRead[]_$creadList @ Shapes.Shape.Style $dRead
+  = Main.$s$fRead(,,)_$s$fRead[]_$creadList
+"SPEC/Main $fRead[]_$creadsPrec @ (Transform, Shape, Stylesheet)" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                                                               (Shapes.Shape.Transform,
+                                                                                                Shapes.Shape.Shape,
+                                                                                                Shapes.Shape.Stylesheet))
+  GHC.Read.$fRead[]_$creadsPrec @ (Shapes.Shape.Transform,
+                                   Shapes.Shape.Shape, Shapes.Shape.Stylesheet)
+                                $dRead
+  = Main.$s$fRead[]_$s$fRead[]_$creadsPrec
+"SPEC/Main $fRead[]_$creadsPrec @ Style" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                                      Shapes.Shape.Style)
+  GHC.Read.$fRead[]_$creadsPrec @ Shapes.Shape.Style $dRead
+  = Main.$s$fRead(,,)_$s$fRead[]_$creadsPrec
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
 parallel variables:
 parallel tycons:
-trusted: safe
+trusted: none
 require own pkg trusted: False
 
