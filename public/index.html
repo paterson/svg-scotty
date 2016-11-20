@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+        <style>
+            body {
+             font-family: Roboto;
+            }
+            #name {
+             font-size: 20px;
+             text-align: center;
+            }
+
+            #author {
+             font-size: 12px;
+             text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+            </div>
+
+            <div class="container">
+                <h1 id="name">SVG Scotty</h1>
+                <h2 id="author">Niall Paterson #12305503</h2>
+
+            <form action="./svg" method="post">
+                <textarea class="form-control" name="drawingText" rows="10" default="text">
+[
+(Translate (Vector 50 50), Square, [Fill Blue, Stroke Red, Outline 10, Height 70, Width 70]),
+(Translate (Vector 170 160), Circle, [Fill Green, Stroke Cyan, Outline 20, Radius 40])
+]
+                </textarea>
+                <input type="submit" value="Render" />
+            </form>
+        </div>
+
+    </body>
+
+</html>

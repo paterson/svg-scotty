@@ -18,7 +18,8 @@ drawingFromText :: String -> Drawing
 drawingFromText str = read str
 
 main = scotty 3002 $ do
-    get "/svg" $ do
+    get "/" $ do file "./public/index.html"
+    post "/svg" $ do
         drawingText <- (S.param "drawingText") `rescue` return
         let drawing = drawingFromText $ (T.unpack . TL.toStrict) drawingText
         S.html $ renderSvg $ toSvg drawing
