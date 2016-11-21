@@ -6,6 +6,7 @@ import Shapes.Shape
 import Shapes.Render
 import Web.Scotty
 import qualified Web.Scotty as S
+import Network.Wai.Middleware.Static
 import Text.Blaze.Svg.Renderer.Text
 
 import qualified Data.Text.Lazy as TL
@@ -18,7 +19,9 @@ drawingFromText :: String -> Drawing
 drawingFromText str = read str
 
 main = scotty 3002 $ do
-    get "/" $ do file "./public/index.html"
+    middleware $ staticPolicy (noDots >-> addBase "public")
+
+    --get "/" $ do file "./public/index.html"
     post "/svg" $ do
         drawingText <- (S.param "drawingText") `rescue` return
         let drawing = drawingFromText $ (T.unpack . TL.toStrict) drawingText

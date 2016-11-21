@@ -2,41 +2,27 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-        <style>
-            body {
-             font-family: Roboto;
-            }
-            #name {
-             font-size: 20px;
-             text-align: center;
-            }
-
-            #author {
-             font-size: 12px;
-             text-align: center;
-            }
-        </style>
+        <link href="/style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="/script.js"></script>
     </head>
     <body>
-            </div>
-
+        </div>
             <div class="container">
                 <h1 id="name">SVG Scotty</h1>
                 <h2 id="author">Niall Paterson #12305503</h2>
-
-            <form action="./svg" method="post">
-                <textarea class="form-control" name="drawingText" rows="10" default="text">
+                <div id="svg"><div id="svg-text">SVG will render here</div></div>
+                <div>
+                    <textarea id="textarea" class="form-control" name="drawingText" rows="10" default="text">
 [
 (Scale (Vector 0.5 0.5), Square, [Fill Blue, Stroke Red, Outline 10, Height 70, Width 70]),
 (Translate (Vector 170 160), Circle, [Fill (Hex "#666666"), Stroke Cyan, Outline 20, Radius 40]),
 (Compose (Rotate 45) (Scale (Vector 0.75 0.75)), Square, [Fill Magenta, Stroke (RGB 255 255 0), Outline 20, Height 30, Width 30, X 100, Y 50])
 ]
-                </textarea>
-                <input type="submit" value="Render" />
-            </form>
+                    </textarea>
+                    <button class="btn btn-success" id="render-button">Render</button>
+                </div>
+            </div>
         </div>
-
     </body>
-
 </html>

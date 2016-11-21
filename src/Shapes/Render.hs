@@ -35,7 +35,7 @@ applyTransformAttributes (x:xs) svg = S.g ! x $ do              -- Apply each tr
 -- elementToSvg (transform, shape, stylesheet) =
 --     S.g ! A.transform (rotate 50) $ do
 --         S.g ! A.transform (Translate (Vector 50 50)) $ do
---             foldl (!) (foldl (!) (shapeToSvg shape) (translateStylesheet stylesheet)) (generateTransform transform)
+--             foldl (!) (shapeToSvg shape) (translateStylesheet stylesheet)
 
 
 shapeToSvg :: Shape -> S.Svg

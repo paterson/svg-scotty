@@ -30,6 +30,7 @@ executable svg-scotty-exe
                      , blaze-svg
                      , text
                      , containers
+                     , wai-middleware-static
   default-language:    Haskell2010
 
 test-suite svg-scotty-test

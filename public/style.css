@@ -1,0 +1,40 @@
+body {
+ font-family: Roboto;
+}
+#name {
+ font-size: 20px;
+ text-align: center;
+}
+
+#author {
+ font-size: 12px;
+ text-align: center;
+}
+
+#render-button {
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 10%;
+    height: 40px;
+}
+
+#textarea {
+    width: 80%;
+    margin-left: 10%;
+}
+
+#svg {
+    width: 80%;
+    margin-left: 10%;
+    height: 300px;
+    border-color: #CCC;
+    border-width: 2px;
+    border-style: solid;
+    margin-bottom: 30px;
+}
+
+#svg-text {
+    width: 100%;
+    text-align: center;
+    line-height: 300px;
+}
