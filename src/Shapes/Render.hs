@@ -20,23 +20,10 @@ toSvg :: Drawing -> S.Svg
 toSvg drawing = svgHeader $ foldl1 (>>) $ map elementToSvg drawing
 
 elementToSvg :: (Transform, Shape, Stylesheet) -> S.Svg
-elementToSvg (transform, shape, stylesheet) =
-    applyTransformAttributes (generateTransform transform) $ do
-        foldl (!) (shapeToSvg shape) (translateStylesheet stylesheet)
-
-applyTransformAttributes :: [S.Attribute] -> S.Svg -> S.Svg
-applyTransformAttributes [] svg     = S.g svg                   -- Finally, apply the svg for shape and stylesheet
-applyTransformAttributes (x:xs) svg = S.g ! x $ do              -- Apply each transform  and nest the next one
-    (applyTransformAttributes xs svg)
-
--- Example output to allow multiple transforms:
-
--- elementToSvg :: (Transform, Shape, Stylesheet) -> S.Svg
--- elementToSvg (transform, shape, stylesheet) =
---     S.g ! A.transform (rotate 50) $ do
---         S.g ! A.transform (Translate (Vector 50 50)) $ do
---             foldl (!) (shapeToSvg shape) (translateStylesheet stylesheet)
-
+elementToSvg (transform, shape, stylesheet) = foldl (!) (shapeToSvg shape) (t:styles)
+    where
+        styles = (translateStylesheet stylesheet)
+        t = A.transform $ mconcat $ transformToAttributeValues transform
 
 shapeToSvg :: Shape -> S.Svg
 shapeToSvg Square = S.rect
@@ -44,9 +31,6 @@ shapeToSvg Circle = S.circle
 
 translateStylesheet :: Stylesheet -> [S.Attribute]
 translateStylesheet sheet = map styleToAttribute sheet
-
-generateTransform :: Transform -> [S.Attribute]
-generateTransform transform = map A.transform (transformToAttributeValues transform)
 
 styleToAttribute :: Style -> S.Attribute
 styleToAttribute (Stroke c)  = A.stroke      $ toValue $ colorToString c

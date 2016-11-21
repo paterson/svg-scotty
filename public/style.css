@@ -1,6 +1,15 @@
 body {
  font-family: Roboto;
 }
+
+code {
+    display: block;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    line-height: 180%;
+}
+
 #name {
  font-size: 20px;
  text-align: center;
@@ -21,6 +30,10 @@ body {
 #textarea {
     width: 80%;
     margin-left: 10%;
+}
+
+.docs {
+    margin-top: 20px;
 }
 
 #svg {

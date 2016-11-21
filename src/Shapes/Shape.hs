@@ -18,6 +18,7 @@ data Color = Black
            | Green
            | Yellow
            | Blue
+           | Orange
            | Magenta
            | Cyan
            | White

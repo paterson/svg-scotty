@@ -22,6 +22,79 @@
                     </textarea>
                     <button class="btn btn-success" id="render-button">Render</button>
                 </div>
+                <div class="docs section">
+                    <h2> CS4012 Assignment 1</h3>
+                    Niall Paterson 12305503
+
+                    <h3>Installation and initiation</h3>
+
+                        <code>git clone https://github.com/paterson/svg-scotty</code>
+                        <code>stack install</code>
+                        <code>stack exec svg-scotty-exe</code>
+                        <code>open http://localhost:3002</code>
+
+                    There is sample shapes included in the textarea already.
+
+                    <h3>Documentation</h3>
+
+                    <h4>Drawing</h4>
+
+                    A drawing is in the following format:
+
+                        <code>[(Transform, Shape, Stylesheet)]</code>
+
+                    An Example drawing is the following:
+
+                        <code>[<br>
+                        (Scale (Vector 0.5 0.5), Square, [Fill Blue, Stroke Red, Outline 10, Height 70, Width 70]),<br>
+                        (Translate (Vector 170 160), Circle, [Fill (Hex "#666666"), Stroke Cyan, Outline 20, Radius 40]),<br>
+                        (Compose (Rotate 45) (Scale (Vector 0.75 0.75)), Square, [Fill Magenta, Stroke (RGB 255 255 0), Outline 20, Height 30, Width 30, X 100, Y 50])<br>
+                        ]</code>
+
+                    <h4>Colours</h4>
+
+                        <code>Black</code>
+                        <code>White</code>
+                        <code>Red</code>
+                        <code>Green</code>
+                        <code>Yellow</code>
+                        <code>Blue</code>
+                        <code>Orange</code>
+                        <code>Magenta</code>
+                        <code>Cyan</code>
+
+                    You are also able to define colours by RGB and Hex:
+
+                        (RGB 255 0 255)
+                        (Hex "#F5F5F5")
+
+                    <h4>Styles<h4>
+
+                        <code>Stroke Color</code>
+                        <code>Fill Color</code>
+                        <code>Outline Float</code>
+                        <code>X Float</code>
+                        <code>Y Float</code>
+                        <code>Width Float</code>
+                        <code>Height Float</code>
+                        <code>CenterX Float</code>
+                        <code>CenterY Float</code>
+                        <code>Radius Float</code>
+
+                    A stylesheet is made up of a list of styles.
+
+                    <h4>Transforms</h4>
+
+                        <code>Identity</code>
+                        <code>Translate Vector</code>
+                        <code>Scale Vector</code>
+                        <code>Compose Transform Transform</code>
+                        <code>Rotate Double</code>
+
+                    There is also a helper function for compose:
+
+                        <code>t0 <+> t1 = Compose t0 t1</code>
+                </div>
             </div>
         </div>
     </body>

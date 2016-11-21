@@ -16,7 +16,7 @@ There is sample shapes included in the textarea already.
 
 A drawing is in the following format:
 
-    [(Transform,Shape, Stylesheet)]
+    [(Transform, Shape, Stylesheet)]
 
 An Example drawing is the following:
 

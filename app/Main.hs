@@ -21,7 +21,7 @@ drawingFromText str = read str
 main = scotty 3002 $ do
     middleware $ staticPolicy (noDots >-> addBase "public")
 
-    --get "/" $ do file "./public/index.html"
+    get "/" $ do file "./public/index.html"
     post "/svg" $ do
         drawingText <- (S.param "drawingText") `rescue` return
         let drawing = drawingFromText $ (T.unpack . TL.toStrict) drawingText
