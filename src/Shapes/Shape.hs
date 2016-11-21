@@ -1,5 +1,5 @@
 module Shapes.Shape(
-  Shape (..), Point, Vector (..), Transform (..), Drawing, Stylesheet, Style (..), Color (..),(<+>)
+  Shape (..), Point, Vector (..), Transform (..), Drawing, Stylesheet, Style (..), Color (..), (<+>)
 ) where
 
 import Data.Map (Map)

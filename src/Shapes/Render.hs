@@ -18,7 +18,22 @@ toSvg drawing = svgHeader $ foldl1 (>>) $ map elementToSvg drawing
 
 elementToSvg :: (Transform, Shape, Stylesheet) -> S.Svg
 elementToSvg (transform, shape, stylesheet) =
-    (foldl (!) (shapeToSvg shape) (translateStylesheet stylesheet)) ! generateTransform transform
+    applyTransformAttributes (generateTransform transform) $ do
+        foldl (!) (shapeToSvg shape) (translateStylesheet stylesheet)
+
+applyTransformAttributes :: [S.Attribute] -> S.Svg -> S.Svg
+applyTransformAttributes [] svg     = S.g svg                   -- Finally, apply the svg for shape and stylesheet
+applyTransformAttributes (x:xs) svg = S.g ! x $ do              -- Apply each transform  and nest the next one
+    (applyTransformAttributes xs svg)
+
+-- Example output to allow multiple transforms:
+
+-- elementToSvg :: (Transform, Shape, Stylesheet) -> S.Svg
+-- elementToSvg (transform, shape, stylesheet) =
+--     S.g ! A.transform (rotate 50) $ do
+--         S.g ! A.transform (Translate (Vector 50 50)) $ do
+--             foldl (!) (foldl (!) (shapeToSvg shape) (translateStylesheet stylesheet)) (generateTransform transform)
+
 
 shapeToSvg :: Shape -> S.Svg
 shapeToSvg Square = S.rect
@@ -27,9 +42,8 @@ shapeToSvg Circle = S.circle
 translateStylesheet :: Stylesheet -> [S.Attribute]
 translateStylesheet sheet = map styleToAttribute sheet
 
-generateTransform :: Transform -> S.Attribute
-generateTransform Identity  = A.transform $ S.rotate 0
-generateTransform transform = A.transform $ (transformToAttributeValue transform) !! 0
+generateTransform :: Transform -> [S.Attribute]
+generateTransform transform = map A.transform (transformToAttributeValues transform)
 
 styleToAttribute :: Style -> S.Attribute
 styleToAttribute (Stroke c)  = A.stroke      $ toValue $ show c
@@ -43,9 +57,9 @@ styleToAttribute (CenterX f) = A.cx          $ toValue f
 styleToAttribute (CenterY f) = A.cy          $ toValue f
 styleToAttribute (Radius f)  = A.r           $ toValue f
 
-transformToAttributeValue :: Transform -> [S.AttributeValue]
-transformToAttributeValue Identity                 = []
-transformToAttributeValue (Rotate x)               = [S.rotate x]
-transformToAttributeValue (Translate (Vector x y)) = [S.translate x y]
-transformToAttributeValue (Scale (Vector x y))     = [S.scale x y]
-transformToAttributeValue (Compose x y)            = (transformToAttributeValue x) ++ (transformToAttributeValue y)
+transformToAttributeValues :: Transform -> [S.AttributeValue]
+transformToAttributeValues Identity                 = []
+transformToAttributeValues (Rotate x)               = [S.rotate x]
+transformToAttributeValues (Translate (Vector x y)) = [S.translate x y]
+transformToAttributeValues (Scale (Vector x y))     = [S.scale x y]
+transformToAttributeValues (Compose x y)            = (transformToAttributeValues x) ++ (transformToAttributeValues y)

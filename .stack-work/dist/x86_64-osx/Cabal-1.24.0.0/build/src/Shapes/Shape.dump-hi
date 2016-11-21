@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-20 15:44:48.960424 UTC
+2016-11-20 19:32:45.544529 UTC
 
 interface svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO:Shapes.Shape 8001
-  interface hash: a214ab2fa381947396a328bae0c28aa1
-  ABI hash: 99df9c9ca644cccfb695f77071125fb3
-  export-list hash: 5fb130bfff1c67620da3b754ba50cdf2
+  interface hash: f0c4ef5857d1c741f16b9d8f2a80df40
+  ABI hash: 0c30e9f07664a3d777214de045671ae2
+  export-list hash: b9fddcc92913269e7882b269aae58bbc
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 26a4e1554b87f05a2d579f4a033cc004
   sig of: Nothing
@@ -13,25 +13,14 @@ interface svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO:Shapes.Shape 8001
   where
 exports:
   Shapes.Shape.<+>
-  Shapes.Shape.circle
-  Shapes.Shape.empty
-  Shapes.Shape.getX
-  Shapes.Shape.getY
-  Shapes.Shape.identity
-  Shapes.Shape.inside
-  Shapes.Shape.point
-  Shapes.Shape.rotate
-  Shapes.Shape.scale
-  Shapes.Shape.square
-  Shapes.Shape.translate
   Shapes.Shape.Color{Shapes.Shape.Black Shapes.Shape.Blue Shapes.Shape.Cyan Shapes.Shape.Green Shapes.Shape.Magenta Shapes.Shape.Red Shapes.Shape.White Shapes.Shape.Yellow}
   Shapes.Shape.Drawing
   Shapes.Shape.Point
   Shapes.Shape.Shape{Shapes.Shape.Circle Shapes.Shape.Empty Shapes.Shape.Square}
   Shapes.Shape.Style{Shapes.Shape.CenterX Shapes.Shape.CenterY Shapes.Shape.Fill Shapes.Shape.Height Shapes.Shape.Outline Shapes.Shape.Radius Shapes.Shape.Stroke Shapes.Shape.Width Shapes.Shape.X Shapes.Shape.Y}
   Shapes.Shape.Stylesheet
-  Shapes.Shape.Transform
-  Shapes.Shape.Vector
+  Shapes.Shape.Transform{Shapes.Shape.Compose Shapes.Shape.Identity Shapes.Shape.Rotate Shapes.Shape.Scale Shapes.Shape.Translate}
+  Shapes.Shape.Vector{Shapes.Shape.Vector}
 module dependencies:
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
                       containers-0.5.7.1@containers-0.5.7.1
@@ -48,12 +37,8 @@ family instance modules: base-4.9.0.0:Control.Applicative
                          base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
                          containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
                          containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
-import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
 import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
-import  -/  base-4.9.0.0:GHC.Float 469226b1bc53433e95d0167dec5d0312
-import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
 import  -/  base-4.9.0.0:GHC.Read 817c914615ac8e308afc0c675fb3f671
-import  -/  base-4.9.0.0:GHC.Real 08bf4acb5f2508f89d6fbcd57fe232e9
 import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
 import  -/  base-4.9.0.0:Text.ParserCombinators.ReadPrec 9512e2f4b227f507f87a150887202aed
@@ -1018,7 +1003,7 @@ f15d245b0b0b6a95500491df3a71cfa3
                       @ Shapes.Shape.Style
                       (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                          @ Shapes.Shape.Style))) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fReadTransform :: GHC.Read.Read Shapes.Shape.Transform
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -1028,7 +1013,7 @@ f15d245b0b0b6a95500491df3a71cfa3
                   Shapes.Shape.$fReadTransform_$creadList
                   Shapes.Shape.$fReadTransform_$creadPrec
                   Shapes.Shape.$fReadTransform_$creadListPrec -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fReadTransform1 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
@@ -1048,7 +1033,7 @@ f15d245b0b0b6a95500491df3a71cfa3
                              <Shapes.Shape.Transform>_R))
                    @ b
                    eta1) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fReadTransform2 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> Text.ParserCombinators.ReadP.ReadP Shapes.Shape.Transform
@@ -1063,14 +1048,14 @@ f15d245b0b0b6a95500491df3a71cfa3
                                        <Shapes.Shape.Transform>_R))
                         (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                   <Shapes.Shape.Transform>_R)))) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fReadTransform3 ::
     Text.ParserCombinators.ReadPrec.Prec
     -> forall b.
        (Shapes.Shape.Transform -> Text.ParserCombinators.ReadP.P b)
        -> Text.ParserCombinators.ReadP.P b
   {- Arity: 2, Strictness: <L,1*U(U)><L,C(U)> -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fReadTransform4 ::
     Text.ParserCombinators.ReadP.P [Shapes.Shape.Transform]
   {- Unfolding: (GHC.Read.$wlist
@@ -1082,14 +1067,14 @@ f15d245b0b0b6a95500491df3a71cfa3
                    @ [Shapes.Shape.Transform]
                    (Text.ParserCombinators.ReadP.$fApplicativeP_$cpure
                       @ [Shapes.Shape.Transform])) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fReadTransform_$creadList ::
     Text.ParserCombinators.ReadP.ReadS [Shapes.Shape.Transform]
   {- Arity: 1,
      Unfolding: (Text.ParserCombinators.ReadP.run
                    @ [Shapes.Shape.Transform]
                    Shapes.Shape.$fReadTransform4) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fReadTransform_$creadListPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec [Shapes.Shape.Transform]
   {- Arity: 2, Strictness: <L,A><L,C(U)>,
@@ -1102,7 +1087,7 @@ f15d245b0b0b6a95500491df3a71cfa3
                                     <[Shapes.Shape.Transform]>_R))
                      (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                                <[Shapes.Shape.Transform]>_R))) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fReadTransform_$creadPrec ::
     Text.ParserCombinators.ReadPrec.ReadPrec Shapes.Shape.Transform
   {- Arity: 1,
@@ -1111,7 +1096,7 @@ f15d245b0b0b6a95500491df3a71cfa3
                   `cast`
                 (Sym (Text.ParserCombinators.ReadPrec.N:ReadPrec[0]
                           <Shapes.Shape.Transform>_R)) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fReadTransform_$creadsPrec ::
     GHC.Types.Int
     -> Text.ParserCombinators.ReadP.ReadS Shapes.Shape.Transform
@@ -1399,7 +1384,7 @@ f15d245b0b0b6a95500491df3a71cfa3
                 (\ (w :: GHC.Types.Int) (w1 :: Shapes.Shape.Style) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  Shapes.Shape.$w$cshowsPrec4 ww1 w1 }) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fShowTransform :: GHC.Show.Show Shapes.Shape.Transform
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -1408,7 +1393,7 @@ f15d245b0b0b6a95500491df3a71cfa3
                   Shapes.Shape.$fShowTransform_$cshowsPrec
                   Shapes.Shape.$fShowTransform_$cshow
                   Shapes.Shape.$fShowTransform_$cshowList -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fShowTransform1 :: Shapes.Shape.Transform -> GHC.Show.ShowS
   {- Arity: 1,
      Unfolding: (Shapes.Shape.$fShowTransform_$cshowsPrec
@@ -1416,7 +1401,7 @@ f15d245b0b0b6a95500491df3a71cfa3
 48e736deea2250a913d3fc33900e1f04
   $fShowTransform2 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fShowTransform_$cshow :: Shapes.Shape.Transform -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -1425,14 +1410,14 @@ f15d245b0b0b6a95500491df3a71cfa3
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fShowTransform_$cshowList ::
     [Shapes.Shape.Transform] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Shapes.Shape.Transform
                    Shapes.Shape.$fShowTransform1) -}
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   $fShowTransform_$cshowsPrec ::
     GHC.Types.Int -> Shapes.Shape.Transform -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <L,1*U(U)><S,1*U> -}
@@ -2162,19 +2147,7 @@ c6598da1b87ec3a71c25154a3ad2dcc1
   $w$cshowsPrec4 ::
     GHC.Prim.Int# -> Shapes.Shape.Style -> GHC.Show.ShowS
   {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
-a7f255505854b1623dd212ea3dac8de0
-  $wrotate :: GHC.Types.Double -> (# Shapes.Shape.Matrix #)
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U)>, Inline: [0],
-     Unfolding: (\ (w :: GHC.Types.Double) ->
-                 (# Shapes.Shape.Matrix
-                      (Shapes.Shape.Vector
-                         (GHC.Float.cosDouble w)
-                         (case w of wild { GHC.Types.D# x ->
-                          GHC.Types.D# (GHC.Prim.negateDouble# (GHC.Prim.sinDouble# x)) }))
-                      (Shapes.Shape.Vector
-                         (GHC.Float.sinDouble w)
-                         (GHC.Float.cosDouble w)) #)) -}
-440b453f59130a05eb5400eb1297386a
+ed743ebd20613d65f15e1ac0ad18df86
   (<+>) ::
     Shapes.Shape.Transform
     -> Shapes.Shape.Transform -> Shapes.Shape.Transform
@@ -2183,7 +2156,7 @@ a7f255505854b1623dd212ea3dac8de0
 45d11fdb7084a43448187cf33934a230
   data Color
     = Black | Red | Green | Yellow | Blue | Magenta | Cyan | White
-4b7c00d55f1240d01fbb7f4001539243
+3d0ad3dc03ff2a2d0447a1e61d31f42b
   type Drawing =
     [(Shapes.Shape.Transform, Shapes.Shape.Shape,
       Shapes.Shape.Stylesheet)]
@@ -2207,193 +2180,15 @@ d69fb0731e31f0172a569f381a730631
     | Radius GHC.Types.Float
 51f897600cebf7d36453f3272a2aae5c
   type Stylesheet = [Shapes.Shape.Style]
-5eab733712a31d57804fc4efd820cb2f
+ed1bebe542c9cf8d2d7a687feff4173f
   data Transform
     = Identity
     | Translate Shapes.Shape.Vector
     | Scale Shapes.Shape.Vector
     | Compose Shapes.Shape.Transform Shapes.Shape.Transform
-    | Rotate Shapes.Shape.Matrix
+    | Rotate GHC.Types.Double
 81d8ffbb3fb0b9e24d7c38ea57cca5f9
   data Vector = Vector GHC.Types.Double GHC.Types.Double
-9b1ebe10fe2e70633f98add0621483b7
-  circle :: Shapes.Shape.Shape
-  {- HasNoCafRefs,
-     Unfolding: InlineRule (0, True, True) Shapes.Shape.Circle -}
-0266745cae65a9cf5ee282487e9bfa9b
-  empty :: Shapes.Shape.Shape
-  {- HasNoCafRefs,
-     Unfolding: InlineRule (0, True, True) Shapes.Shape.Empty -}
-487345b575dc40b7de0e9c70b39ba4c8
-  getX :: Shapes.Shape.Vector -> GHC.Types.Double
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U(U),A)>m,
-     Unfolding: InlineRule (1, True, False)
-                (\ (ds :: Shapes.Shape.Vector) ->
-                 case ds of wild { Shapes.Shape.Vector x y -> x }) -}
-6cf3a34e294f81b9cdaca5d27b781bd1
-  getY :: Shapes.Shape.Vector -> GHC.Types.Double
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U(U))>m,
-     Unfolding: InlineRule (1, True, False)
-                (\ (ds :: Shapes.Shape.Vector) ->
-                 case ds of wild { Shapes.Shape.Vector x y -> y }) -}
-9c55fd55c3b4c7880ce691ba3e2abdc6
-  identity :: Shapes.Shape.Transform
-  {- HasNoCafRefs,
-     Unfolding: InlineRule (0, True, True) Shapes.Shape.Identity -}
-80d50184906cbdccba80687f8f08baff
-  inside ::
-    Shapes.Shape.Point -> Shapes.Shape.Drawing -> GHC.Types.Bool
-  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U(U),U(U))><S,1*U>,
-     Unfolding: InlineRule (0, True, True)
-                Shapes.Shape.inside1
-                  `cast`
-                (<Shapes.Shape.Point>_R
-                 ->_R <Shapes.Shape.Drawing>_R
-                 ->_R Data.Monoid.N:Any[0]) -}
-47c0211c4972884995fb3636a6645103
-  inside1 ::
-    Shapes.Shape.Point -> Shapes.Shape.Drawing -> Data.Monoid.Any
-  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U(U),U(U))><S,1*U>,
-     Unfolding: (\ (p :: Shapes.Shape.Point)
-                   (d :: Shapes.Shape.Drawing) ->
-                 letrec {
-                   go :: [(Shapes.Shape.Transform, Shapes.Shape.Shape,
-                           Shapes.Shape.Stylesheet)]
-                         -> Data.Monoid.Any
-                     {- Arity: 1, Strictness: <S,1*U> -}
-                   = \ (ds :: [(Shapes.Shape.Transform, Shapes.Shape.Shape,
-                                Shapes.Shape.Stylesheet)]) ->
-                     case ds of wild {
-                       [] -> GHC.Types.False `cast` (Sym (Data.Monoid.N:Any[0]))
-                       : y ys
-                       -> case y of wild1 { (,,) t s ds1 ->
-                          case s of wild2 {
-                            Shapes.Shape.Empty -> go ys
-                            Shapes.Shape.Circle
-                            -> case Shapes.Shape.transform
-                                      t
-                                      p of wild3 { Shapes.Shape.Vector x y1 ->
-                               case x of wild4 { GHC.Types.D# x1 ->
-                               case y1 of wild5 { GHC.Types.D# x2 ->
-                               case GHC.Prim.tagToEnum#
-                                      @ GHC.Types.Bool
-                                      (GHC.Prim.<=##
-                                         (GHC.Prim.sqrtDouble#
-                                            (GHC.Prim.+##
-                                               (GHC.Prim.**## x1 2.0##)
-                                               (GHC.Prim.**## x2 2.0##)))
-                                         1.0##) of wild6 {
-                                 GHC.Types.False -> go ys
-                                 GHC.Types.True
-                                 -> GHC.Types.True `cast` (Sym (Data.Monoid.N:Any[0])) } } } }
-                            Shapes.Shape.Square
-                            -> case Shapes.Shape.transform
-                                      t
-                                      p of wild3 { Shapes.Shape.Vector x y1 ->
-                               case x of wild4 { GHC.Types.D# x1 ->
-                               let {
-                                 $w$j :: GHC.Prim.Double# -> GHC.Types.Bool
-                                   {- Arity: 1, Strictness: <S,U>, Inline: [0] -}
-                                 = \ (w :: GHC.Prim.Double#)[OneShot] ->
-                                   case y1 of wild5 { GHC.Types.D# x2 ->
-                                   case GHC.Prim.tagToEnum#
-                                          @ GHC.Types.Bool
-                                          (GHC.Prim.==## x2 0.0##) of wild6 {
-                                     GHC.Types.False
-                                     -> case GHC.Prim.tagToEnum#
-                                               @ GHC.Types.Bool
-                                               (GHC.Prim.>## x2 0.0##) of wild7 {
-                                          GHC.Types.False
-                                          -> let {
-                                               y2 :: GHC.Prim.Double# = GHC.Prim.negateDouble# x2
-                                             } in
-                                             case GHC.Prim.tagToEnum#
-                                                    @ GHC.Types.Bool
-                                                    (GHC.Prim.<=## w y2) of wild8 {
-                                               GHC.Types.False
-                                               -> GHC.Prim.tagToEnum#
-                                                    @ GHC.Types.Bool
-                                                    (GHC.Prim.<=## w 1.0##)
-                                               GHC.Types.True
-                                               -> GHC.Prim.tagToEnum#
-                                                    @ GHC.Types.Bool
-                                                    (GHC.Prim.<=## y2 1.0##) }
-                                          GHC.Types.True
-                                          -> case GHC.Prim.tagToEnum#
-                                                    @ GHC.Types.Bool
-                                                    (GHC.Prim.<=## w x2) of wild8 {
-                                               GHC.Types.False
-                                               -> GHC.Prim.tagToEnum#
-                                                    @ GHC.Types.Bool
-                                                    (GHC.Prim.<=## w 1.0##)
-                                               GHC.Types.True
-                                               -> GHC.Prim.tagToEnum#
-                                                    @ GHC.Types.Bool
-                                                    (GHC.Prim.<=## x2 1.0##) } }
-                                     GHC.Types.True
-                                     -> case GHC.Prim.tagToEnum#
-                                               @ GHC.Types.Bool
-                                               (GHC.Prim.<=## w 0.0##) of wild7 {
-                                          GHC.Types.False
-                                          -> GHC.Prim.tagToEnum#
-                                               @ GHC.Types.Bool
-                                               (GHC.Prim.<=## w 1.0##)
-                                          GHC.Types.True -> GHC.Types.True } } }
-                               } in
-                               case GHC.Prim.tagToEnum#
-                                      @ GHC.Types.Bool
-                                      (GHC.Prim.==## x1 0.0##) of wild5 {
-                                 GHC.Types.False
-                                 -> case GHC.Prim.tagToEnum#
-                                           @ GHC.Types.Bool
-                                           (GHC.Prim.>## x1 0.0##) of wild6 {
-                                      GHC.Types.False
-                                      -> case $w$j (GHC.Prim.negateDouble# x1) of wild7 {
-                                           GHC.Types.False -> go ys
-                                           GHC.Types.True
-                                           -> GHC.Types.True `cast` (Sym (Data.Monoid.N:Any[0])) }
-                                      GHC.Types.True
-                                      -> case $w$j x1 of wild7 {
-                                           GHC.Types.False -> go ys
-                                           GHC.Types.True
-                                           -> GHC.Types.True `cast` (Sym (Data.Monoid.N:Any[0])) } }
-                                 GHC.Types.True
-                                 -> case $w$j 0.0## of wild6 {
-                                      GHC.Types.False -> go ys
-                                      GHC.Types.True
-                                      -> GHC.Types.True
-                                           `cast`
-                                         (Sym (Data.Monoid.N:Any[0])) } } } } } } }
-                 } in
-                 go d) -}
-5e74e55c620b9751d72223a68a20ca6a
-  point :: GHC.Types.Double -> GHC.Types.Double -> Shapes.Shape.Point
-  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>m,
-     Unfolding: InlineRule (0, True, True) Shapes.Shape.Vector -}
-c1281d67d3daaaa4c4daf3e9e2aa393c
-  rotate :: GHC.Types.Double -> Shapes.Shape.Transform
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U)>m5,
-     Inline: INLINE[0],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: GHC.Types.Double) ->
-                 case Shapes.Shape.$wrotate w of ww { Unit# ww1 ->
-                 Shapes.Shape.Rotate ww1 }) -}
-1b21697a8d9409b8936bd7fa5c958b3e
-  scale :: Shapes.Shape.Vector -> Shapes.Shape.Transform
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m3,
-     Unfolding: InlineRule (0, True, True) Shapes.Shape.Scale -}
-63a48fa3ad1ce49740f0d7ecc403d3a2
-  square :: Shapes.Shape.Shape
-  {- HasNoCafRefs,
-     Unfolding: InlineRule (0, True, True) Shapes.Shape.Square -}
-06d25c936cc3780f139639c3ab93e62d
-  transform ::
-    Shapes.Shape.Transform -> Shapes.Shape.Point -> Shapes.Shape.Point
-  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U(U(U),U(U))> -}
-c782d89a68a255d7d0a6c9287ee52ea8
-  translate :: Shapes.Shape.Vector -> Shapes.Shape.Transform
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m2,
-     Unfolding: InlineRule (0, True, True) Shapes.Shape.Translate -}
 instance [safe] GHC.Read.Read [Shapes.Shape.Color]
   = Shapes.Shape.$fReadColor
 instance [safe] GHC.Read.Read [Shapes.Shape.Matrix]

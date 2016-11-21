@@ -1,21 +1,25 @@
 
 ==================== FINAL INTERFACE ====================
-2016-11-20 15:44:50.066223 UTC
+2016-11-21 13:00:41.607154 UTC
 
 interface svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO:Shapes.Render 8001
-  interface hash: a3b51c5b09a2ff5e4566e3af2dbe6e4e
-  ABI hash: 4ef22eac068ee540a7234ae529f82d92
-  export-list hash: ede8c9f2e9575ca83f4e4dfb5905b465
+  interface hash: d38dfe381796b1a122d9fcc09602c1d9
+  ABI hash: a5f9a4fc1095551288f972113274bca7
+  export-list hash: 7cbe5dc6125b008a65a822a306ee29fb
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 26a4e1554b87f05a2d579f4a033cc004
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Shapes.Render.applyTransformAttributes
+  Shapes.Render.elementToSvg
+  Shapes.Render.generateTransform
   Shapes.Render.shapeToSvg
   Shapes.Render.styleToAttribute
   Shapes.Render.svgHeader
   Shapes.Render.toSvg
+  Shapes.Render.transformToAttributeValues
   Shapes.Render.translateStylesheet
 module dependencies: Shapes.Shape
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
@@ -51,6 +55,7 @@ family instance modules: base-4.9.0.0:Control.Applicative
                          text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text
                          text-1.2.2.1@text-1.2.2.1-5QpmrLQApEZ4Ly9nMHWY0s:Data.Text.Lazy
 import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:Data.List 49b86831b79b49ce5d4d9416ecba61df
 import  -/  base-4.9.0.0:Data.Maybe 5f2ba364cbe65c060bc5436bc0b9d049
 import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
 import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
@@ -61,21 +66,28 @@ import  -/  blaze-svg-0.3.6@blaze-svg-0.3.6-KnzXaminLUoIWcRwpCsUT:Text.Blaze.Svg
 import  -/  blaze-svg-0.3.6@blaze-svg-0.3.6-KnzXaminLUoIWcRwpCsUT:Text.Blaze.Svg11 cedaa4e3f369b220a51c0f9beb20582b
 import  -/  blaze-svg-0.3.6@blaze-svg-0.3.6-KnzXaminLUoIWcRwpCsUT:Text.Blaze.Svg11.Attributes 76b412d60adc8aee1c1b2ed3b9a4d6cd
 import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map 8f3eaf1368a7ea27857993e3febae6a3
-import  -/  Shapes.Shape 99df9c9ca644cccfb695f77071125fb3
-  exports: 5fb130bfff1c67620da3b754ba50cdf2
+import  -/  Shapes.Shape 0c30e9f07664a3d777214de045671ae2
+  exports: b9fddcc92913269e7882b269aae58bbc
   CenterX ad163f2796ee7d8507d4b0619a829766
   CenterY 0231a073eca1805fbd3961c32c518255
   Circle 16c3c237d2cf69900a8ec958f47baf20
-  Drawing 4b7c00d55f1240d01fbb7f4001539243
+  Compose 68f5f07c661de69182b7294a5cb327ae
+  Drawing 3d0ad3dc03ff2a2d0447a1e61d31f42b
   Fill 8ac30b0b65821c2c37eb4e7cdc686cdc
   Height 3c4aa376c8f50cd59b93b7bd429d0979
+  Identity c573b4fc2f1136b2d5b8c138a9e955b9
   Outline 9fbed42b29afee8bcd8a8021a07dbda5
   Radius 9751662770683d5603d1d64aadc4d95b
+  Rotate 6e1aaf478eea89890024510ca63942c8
+  Scale 45b22bd985e9bbcd2a47fd48ebd22749
   Shape 51563dfb73c79536043d6caa5f672d8f
   Square 926318aadd9bcf266ebb1fc69255b2f2
   Stroke fb3dcdbffb3f5d761cc6b0c2afd594e8
   Style 14667b7358bfbe67333ede1b0609373e
   Stylesheet 51f897600cebf7d36453f3272a2aae5c
+  Transform ed1bebe542c9cf8d2d7a687feff4173f
+  Translate 0319bf9960b81cdce26576fe95e71c14
+  Vector 751bce9c5a161e712b698464681f7f46
   Width 1f22ef07205b1551930404ce6217108e
   X 912c9320affa0719505235e685faabae
   Y bf99564751ef7f9efb2d47132d172242
@@ -94,91 +106,80 @@ import  -/  Shapes.Shape 99df9c9ca644cccfb695f77071125fb3
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS
                    "svg-scotty-0.1.0.0-ECuSxziq5In4SpAqkaD1RO"#) -}
-b96137ef1489ce2057a7b31a08c25c56
-  $wtoSvg ::
-    Shapes.Shape.Drawing
-    -> (# Text.Blaze.Internal.StaticString,
-          Text.Blaze.Internal.StaticString, Text.Blaze.Internal.ChoiceString,
-          Text.Blaze.Internal.MarkupM () #)
-  {- Arity: 1, Strictness: <S,1*U>, Inline: [0],
-     Unfolding: (\ (w :: Shapes.Shape.Drawing) ->
-                 case w of wild {
-                   []
-                   -> case Shapes.Render.toSvg33
-                      ret_ty (# Text.Blaze.Internal.StaticString,
-                                Text.Blaze.Internal.StaticString, Text.Blaze.Internal.ChoiceString,
-                                Text.Blaze.Internal.MarkupM () #)
-                      of {}
-                   : ds ds1
-                   -> case ds of wild1 { (,,) ds2 shape stylesheet ->
-                      case ds1 of wild2 {
-                        []
-                        -> (# Shapes.Render.svgHeader27, Shapes.Render.svgHeader23,
-                              Shapes.Render.svgHeader21,
-                              Text.Blaze.Internal.AddAttribute
-                                @ ()
-                                Shapes.Render.svgHeader19
-                                Shapes.Render.svgHeader17
-                                Shapes.Render.svgHeader15
-                                (Text.Blaze.Internal.AddAttribute
-                                   @ ()
-                                   Shapes.Render.svgHeader13
-                                   Shapes.Render.svgHeader11
-                                   Shapes.Render.svgHeader15
-                                   (Text.Blaze.Internal.AddAttribute
-                                      @ ()
-                                      Shapes.Render.svgHeader7
-                                      Shapes.Render.svgHeader3
-                                      Shapes.Render.svgHeader1
-                                      (Text.Blaze.Internal.Append
-                                         @ ()
-                                         @ ()
-                                         @ ()
-                                         Text.Blaze.Svg11.docType
-                                         (Text.Blaze.Internal.AddAttribute
-                                            @ ()
-                                            Shapes.Render.toSvg29
-                                            Shapes.Render.toSvg25
-                                            Shapes.Render.toSvg23
-                                            (Text.Blaze.Internal.AddAttribute
-                                               @ ()
-                                               Shapes.Render.toSvg19
-                                               Shapes.Render.toSvg15
-                                               Shapes.Render.toSvg13
-                                               (Text.Blaze.Internal.Parent
-                                                  @ ()
-                                                  @ ()
-                                                  Shapes.Render.toSvg9
-                                                  Shapes.Render.toSvg5
-                                                  Shapes.Render.toSvg1
-                                                  (Shapes.Render.toSvg_go
-                                                     stylesheet
-                                                     (case shape of wild3 {
-                                                        Shapes.Shape.Empty
-                                                        -> Shapes.Render.shapeToSvg1
-                                                        Shapes.Shape.Circle
-                                                        -> Text.Blaze.Svg11.circle
-                                                        Shapes.Shape.Square
-                                                        -> Text.Blaze.Svg11.rect })))))))) #)
-                        : ipv ipv1
-                        -> case Shapes.Render.toSvg33
-                           ret_ty (# Text.Blaze.Internal.StaticString,
-                                     Text.Blaze.Internal.StaticString,
-                                     Text.Blaze.Internal.ChoiceString,
-                                     Text.Blaze.Internal.MarkupM () #)
-                           of {} } } }) -}
-a2bbabe990d75c5a0221566183c7da1f
+1af376661187d5129fff1a62f09121a9
+  $welementToSvg ::
+    Shapes.Shape.Transform
+    -> Shapes.Shape.Shape
+    -> Shapes.Shape.Stylesheet
+    -> Text.Blaze.Svg.Internal.Svg
+  {- Arity: 3, Strictness: <S,1*U><L,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: Shapes.Shape.Transform)
+                   (ww1 :: Shapes.Shape.Shape)
+                   (ww2 :: Shapes.Shape.Stylesheet) ->
+                 Shapes.Render.applyTransformAttributes
+                   (Shapes.Render.generateTransform ww)
+                   (Shapes.Render.elementToSvg_go
+                      ww2
+                      (case ww1 of wild {
+                         Shapes.Shape.Empty -> Shapes.Render.elementToSvg1
+                         Shapes.Shape.Circle -> Text.Blaze.Svg11.circle
+                         Shapes.Shape.Square -> Text.Blaze.Svg11.rect }))) -}
+5cdbe23741bf631d7d57e6a6a7c6f450
+  applyTransformAttributes ::
+    [Text.Blaze.Internal.Attribute]
+    -> Text.Blaze.Svg.Internal.Svg -> Text.Blaze.Svg.Internal.Svg
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+997a6e20051f5f5d2b041cbbd4c09b0f
+  elementToSvg ::
+    (Shapes.Shape.Transform, Shapes.Shape.Shape,
+     Shapes.Shape.Stylesheet)
+    -> Text.Blaze.Svg.Internal.Svg
+  {- Arity: 1, Strictness: <S(SLL),1*U(1*U,1*U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w3 :: (Shapes.Shape.Transform, Shapes.Shape.Shape,
+                           Shapes.Shape.Stylesheet)) ->
+                 case w3 of ww { (,,) ww1 ww2 ww3 ->
+                 Shapes.Render.$welementToSvg ww1 ww2 ww3 }) -}
+bcaa28be5d45aaab695f49a0d587be5b
+  elementToSvg1 :: Text.Blaze.Svg.Internal.Svg
+  {- Strictness: x -}
+3e76bb8a3ef51b32896cbd1c9bc9a14c
+  elementToSvg_go ::
+    [Shapes.Shape.Style]
+    -> Text.Blaze.Svg.Internal.Svg -> Text.Blaze.Svg.Internal.Svg
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+17833b7ed9d86bd3183bd0c7c08326da
+  generateTransform ::
+    Shapes.Shape.Transform -> [Text.Blaze.Internal.Attribute]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (transform :: Shapes.Shape.Transform) ->
+                 GHC.Base.build
+                   @ Text.Blaze.Internal.Attribute
+                   (\ @ b1
+                      (c :: Text.Blaze.Internal.Attribute -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ Text.Blaze.Internal.AttributeValue
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ Text.Blaze.Internal.Attribute
+                         @ b1
+                         @ Text.Blaze.Internal.AttributeValue
+                         c
+                         Text.Blaze.Svg11.Attributes.transform)
+                      n
+                      (Shapes.Render.transformToAttributeValues transform))) -}
+b2815d19980a779faaffe98aaa95be64
   shapeToSvg :: Shapes.Shape.Shape -> Text.Blaze.Svg.Internal.Svg
   {- Arity: 1, Strictness: <S,1*U>m3,
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Shapes.Shape.Shape) ->
                  case ds of wild {
-                   Shapes.Shape.Empty -> Shapes.Render.shapeToSvg1
+                   Shapes.Shape.Empty -> Shapes.Render.elementToSvg1
                    Shapes.Shape.Circle -> Text.Blaze.Svg11.circle
                    Shapes.Shape.Square -> Text.Blaze.Svg11.rect }) -}
-b211949d769fca908a0639b485a5b609
-  shapeToSvg1 :: Text.Blaze.Svg.Internal.Svg
-  {- Strictness: x -}
 a6702f4d10aea729f4c4af4422a11126
   styleToAttribute ::
     Shapes.Shape.Style -> Text.Blaze.Internal.Attribute
@@ -1429,13 +1430,60 @@ c4f90ebc4fe24432f92097dd9d01c719
 4fb4d6904d815597959b9b27fa666320
   svgHeader_w3 :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString# "viewBox"#) -}
-3c46d472c264f6ae2b21f87aa6ffc0f3
+59973fe50a88591231537785f392c32a
   toSvg :: Shapes.Shape.Drawing -> Text.Blaze.Svg.Internal.Svg
-  {- Arity: 1, Strictness: <S,1*U>m8, Inline: INLINE[0],
+  {- Arity: 1, Strictness: <L,1*U>m8, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
-                (\ (w :: Shapes.Shape.Drawing) ->
-                 case Shapes.Render.$wtoSvg w of ww { (#,,,#) ww1 ww2 ww3 ww4 ->
-                 Text.Blaze.Internal.AddAttribute @ () ww1 ww2 ww3 ww4 }) -}
+                (\ (w3 :: Shapes.Shape.Drawing) ->
+                 Text.Blaze.Internal.AddAttribute
+                   @ ()
+                   Shapes.Render.svgHeader27
+                   Shapes.Render.svgHeader23
+                   Shapes.Render.svgHeader21
+                   (Text.Blaze.Internal.AddAttribute
+                      @ ()
+                      Shapes.Render.svgHeader19
+                      Shapes.Render.svgHeader17
+                      Shapes.Render.svgHeader15
+                      (Text.Blaze.Internal.AddAttribute
+                         @ ()
+                         Shapes.Render.svgHeader13
+                         Shapes.Render.svgHeader11
+                         Shapes.Render.svgHeader15
+                         (Text.Blaze.Internal.AddAttribute
+                            @ ()
+                            Shapes.Render.svgHeader7
+                            Shapes.Render.svgHeader3
+                            Shapes.Render.svgHeader1
+                            (Text.Blaze.Internal.Append
+                               @ ()
+                               @ ()
+                               @ ()
+                               Text.Blaze.Svg11.docType
+                               (Text.Blaze.Internal.AddAttribute
+                                  @ ()
+                                  Shapes.Render.toSvg29
+                                  Shapes.Render.toSvg25
+                                  Shapes.Render.toSvg23
+                                  (Text.Blaze.Internal.AddAttribute
+                                     @ ()
+                                     Shapes.Render.toSvg19
+                                     Shapes.Render.toSvg15
+                                     Shapes.Render.toSvg13
+                                     (Text.Blaze.Internal.Parent
+                                        @ ()
+                                        @ ()
+                                        Shapes.Render.toSvg9
+                                        Shapes.Render.toSvg5
+                                        Shapes.Render.toSvg1
+                                        (case GHC.Base.map
+                                                @ (Shapes.Shape.Transform, Shapes.Shape.Shape,
+                                                   Shapes.Shape.Stylesheet)
+                                                @ (Text.Blaze.Internal.MarkupM ())
+                                                Shapes.Render.elementToSvg
+                                                w3 of wild {
+                                           [] -> GHC.List.foldl2 @ (Text.Blaze.Internal.MarkupM ())
+                                           : x xs -> Shapes.Render.toSvg_go xs x }))))))))) -}
 de2b5940da2d78fd1719a336702d21dd
   toSvg1 :: Text.Blaze.Internal.StaticString
   {- Unfolding: (Text.Blaze.Internal.StaticString
@@ -1632,9 +1680,6 @@ cb0279e7659994ca7735ec161525176b
   toSvg32 :: [GHC.Types.Char] -> [GHC.Types.Char]
   {- Arity: 1,
      Unfolding: (GHC.Base.++ @ GHC.Types.Char Shapes.Render.toSvg_w6) -}
-28a226702ba574efcd264b7306cdbe01
-  toSvg33 :: Text.Blaze.Svg.Internal.Svg
-  {- Strictness: x -}
 1eda3604a6fe2e8c6689b804e07e7b7d
   toSvg4 :: [GHC.Types.Char] -> [GHC.Types.Char]
   {- Arity: 1,
@@ -1677,11 +1722,11 @@ d7958197015b800fa3a491df10836ab2
                    Shapes.Render.toSvg12
                    Shapes.Render.toSvg11
                    Shapes.Render.toSvg_t3) -}
-d0fd5ddd5d0dc1e5804bdf1518b6cafa
+0aabd83f598468babc6a579cbd6739af
   toSvg_go ::
-    [Shapes.Shape.Style]
-    -> Text.Blaze.Svg.Internal.Svg -> Text.Blaze.Svg.Internal.Svg
-  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+    [Text.Blaze.Internal.MarkupM ()]
+    -> Text.Blaze.Internal.MarkupM () -> Text.Blaze.Internal.MarkupM ()
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U> -}
 fe306cdbbb86c6cd9fefc6e959dddd66
   toSvg_t1 :: Data.Text.Internal.Text
   {- Unfolding: (case GHC.Magic.runRW#
@@ -1752,6 +1797,10 @@ cfdd0b1b20888f5c900e86151460bf09
 493a33ef65d5711dc01b0262e7c6dc06
   toSvg_w6 :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString# "xmlns:xlink"#) -}
+63e630ce4f13883d0b9e367e596fc7ee
+  transformToAttributeValues ::
+    Shapes.Shape.Transform -> [Text.Blaze.Internal.AttributeValue]
+  {- Arity: 1, Strictness: <S,1*U> -}
 fdd4afc2024280a81dfebb24c736818e
   translateStylesheet ::
     Shapes.Shape.Stylesheet -> [Text.Blaze.Internal.Attribute]
