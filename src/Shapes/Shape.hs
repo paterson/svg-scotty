@@ -21,6 +21,8 @@ data Color = Black
            | Magenta
            | Cyan
            | White
+           | RGB Int Int Int
+           | Hex String
              deriving (Show, Read)
 
 data Style = Stroke Color
