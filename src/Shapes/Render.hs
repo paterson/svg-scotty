@@ -20,9 +20,11 @@ toSvg :: Drawing -> S.Svg
 toSvg drawing = svgHeader $ foldl1 (>>) $ map elementToSvg drawing
 
 elementToSvg :: (Transform, Shape, Stylesheet) -> S.Svg
-elementToSvg (transform, shape, stylesheet) = foldl (!) (shapeToSvg shape) (t:styles)
+elementToSvg (transform, shape, stylesheet) = foldl (!) svgshape attrs
     where
-        styles = (translateStylesheet stylesheet)
+        svgshape = shapeToSvg shape
+        attrs    = (t:styles)
+        styles = translateStylesheet stylesheet
         t = A.transform $ mconcat $ transformToAttributeValues transform
 
 shapeToSvg :: Shape -> S.Svg
