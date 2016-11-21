@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Shapes.Render where
 
 import Shapes.Shape
@@ -11,7 +13,7 @@ import qualified Data.Map as Map
 import Data.Maybe
 import Data.List (intersperse)
 
-svgHeader = S.docTypeSvg ! A.version (toValue "1.1") ! A.width (toValue "250") ! A.height (toValue "250") ! A.viewbox (toValue "0 0 250 250")
+svgHeader = S.docTypeSvg ! A.version "1.1" ! A.width "250" ! A.height "250" ! A.viewbox "0 0 250 250"
 
 toSvg :: Drawing -> S.Svg
 toSvg drawing = svgHeader $ foldl1 (>>) $ map elementToSvg drawing
