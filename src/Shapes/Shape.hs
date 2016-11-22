@@ -41,7 +41,6 @@ data Style = Stroke Color
 type Stylesheet = [Style]
 
 -- Shapes
-
 type Point  = Vector
 data Shape = Empty
            | Circle
@@ -49,7 +48,6 @@ data Shape = Empty
              deriving (Show, Read)
 
 -- Transformations
-
 data Transform = Identity
            | Translate Vector
            | Scale Vector
@@ -60,5 +58,4 @@ data Transform = Identity
 t0 <+> t1 = Compose t0 t1
 
 -- Drawings
-
 type Drawing = [(Transform,Shape, Stylesheet)]
