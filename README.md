@@ -8,7 +8,7 @@ Niall Paterson 12305503
     stack exec svg-scotty-exe
     open http://localhost:3002
 
-There is sample shapes included in the textarea already.
+The project can be accessed from the root path ("http://localhost:3002/"). There is sample shapes included in the textarea already.
 
 ### Documentation
 
