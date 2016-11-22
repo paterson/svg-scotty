@@ -15,14 +15,15 @@
                 <div>
                     <textarea id="textarea" class="form-control" name="drawingText" rows="10" default="text">
 [
-(Scale (Vector 0.5 0.5), Square, [Fill Blue, Stroke Red, Outline 10, Height 70, Width 70]),
+(Scale (Vector 0.5 0.5), Square, [Fill Blue, Stroke Red, Outline 10, Height 70, Width 70, X 300, Y 100]),
 (Translate (Vector 170 160), Circle, [Fill (Hex "#666666"), Stroke Cyan, Outline 20, Radius 40]),
-(Compose (Rotate 45) (Scale (Vector 0.75 0.75)), Square, [Fill Magenta, Stroke (RGB 255 255 0), Outline 20, Height 30, Width 30, X 100, Y 50])
+(Compose (Rotate 45) (Scale (Vector 0.75 0.75)), Square, [Fill Magenta, Stroke (RGB 255 255 0), Outline 20, Height 30, Width 30, X 150, Y 50])
 ]
                     </textarea>
                     <button class="btn btn-success" id="render-button">Render</button>
                 </div>
                 <div class="docs section">
+                    <hr />
                     <h2> CS4012 Assignment 1</h3>
                     Niall Paterson 12305503
 
@@ -46,9 +47,9 @@
                     An Example drawing is the following:
 
                         <code>[<br>
-                        (Scale (Vector 0.5 0.5), Square, [Fill Blue, Stroke Red, Outline 10, Height 70, Width 70]),<br>
+                        (Scale (Vector 0.9 0.9), Square, [Fill Blue, Stroke Red, Outline 10, Height 70, Width 70, X 300, Y 100]),<br>
                         (Translate (Vector 170 160), Circle, [Fill (Hex "#666666"), Stroke Cyan, Outline 20, Radius 40]),<br>
-                        (Compose (Rotate 45) (Scale (Vector 0.75 0.75)), Square, [Fill Magenta, Stroke (RGB 255 255 0), Outline 20, Height 30, Width 30, X 100, Y 50])<br>
+                        (Compose (Rotate 45) (Scale (Vector 0.75 0.75)), Square, [Fill Magenta, Stroke (RGB 255 255 0), Outline 20, Height 30, Width 30, X 150, Y 50])<br>
                         ]</code>
 
                     <h4>Colours</h4>
@@ -65,10 +66,10 @@
 
                     You are also able to define colours by RGB and Hex:
 
-                        (RGB 255 0 255)
-                        (Hex "#F5F5F5")
+                        <code>(RGB 255 0 255)</code>
+                        <code>(Hex "#F5F5F5")</code>
 
-                    <h4>Styles<h4>
+                    <h4>Styles</h4>
 
                         <code>Stroke Color</code>
                         <code>Fill Color</code>
